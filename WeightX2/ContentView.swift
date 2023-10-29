@@ -6,21 +6,34 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        @ObservedObject var phoneViewModel: PhoneViewModel
+        @State private var phoneNumber: String = ""
+    
+    
+    @State private var isNavigationActive = false
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        var body: some View {
+            VStack {
+                if let user = Auth.auth().currentUser {
+                    HomeScreenView(phoneViewModel: phoneViewModel)
+                }
+                else{
+                    PhoneNumberView(phoneViewModel: phoneViewModel)
+                }
+            }
+            
+        }
     }
-}
+/*struct ContentView_Previews: PreviewProvider {
+     static var previews: some View {
+         ContentView(phoneViewModel: <#PhoneViewModel#>)
+    }
+}*/
+
+
+
+

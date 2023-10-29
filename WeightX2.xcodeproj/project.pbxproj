@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		724F20EB2AE2EC270035F4CA /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */; };
+		7278CDD82AA79AD900263C74 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD72AA79AD900263C74 /* HomeScreenView.swift */; };
+		7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD92AA7A48100263C74 /* OTPView.swift */; };
+		72B125A42AADBA690001523B /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B125A32AADBA690001523B /* AuthModel.swift */; };
+		72B125AB2AAE47500001523B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125AA2AAE47500001523B /* FirebaseAuth */; };
+		72B125AD2AAE47500001523B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125AC2AAE47500001523B /* FirebaseMessaging */; };
+		72B125B42AAEC9860001523B /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125B32AAEC9860001523B /* PromiseKit */; };
+		72CF2A8E2AA492E6009BF195 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF2A8D2AA492E6009BF195 /* Nutrition.swift */; };
 		72EAE0032A88F77C001998B5 /* WeightX2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0022A88F77C001998B5 /* WeightX2App.swift */; };
 		72EAE0052A88F77C001998B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0042A88F77C001998B5 /* ContentView.swift */; };
 		72EAE0072A88F77F001998B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72EAE0062A88F77F001998B5 /* Assets.xcassets */; };
@@ -14,6 +22,15 @@
 		72EAE0152A88F77F001998B5 /* WeightX2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0142A88F77F001998B5 /* WeightX2Tests.swift */; };
 		72EAE01F2A88F77F001998B5 /* WeightX2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE01E2A88F77F001998B5 /* WeightX2UITests.swift */; };
 		72EAE0212A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0202A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift */; };
+		72F31B6C2AB4BEFC00B4249F /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B6B2AB4BEFC00B4249F /* PhoneViewModel.swift */; };
+		72F31B6E2AB4BF9200B4249F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B6D2AB4BF9200B4249F /* Utils.swift */; };
+		72F31B702AB4C04200B4249F /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B6F2AB4C04200B4249F /* CountryModel.swift */; };
+		72F31B722AB4C16100B4249F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B712AB4C16100B4249F /* AuthenticationService.swift */; };
+		72F31B742AB4C19500B4249F /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B732AB4C19500B4249F /* FirebaseError.swift */; };
+		72F31B762AB5FA3600B4249F /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B752AB5FA3600B4249F /* CustomUserDefaults.swift */; };
+		72F31B782AB5FA5400B4249F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B772AB5FA5400B4249F /* Constants.swift */; };
+		72F31B812AB60A8400B4249F /* CountryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 72F31B802AB6099000B4249F /* CountryCodes.json */; };
+		72F31B8C2AB616BB00B4249F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72F31B8B2AB616BB00B4249F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		7278CDD72AA79AD900263C74 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		7278CDD92AA7A48100263C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		72B125A32AADBA690001523B /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		72B6399C2A8BD3380005294D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		72CF2A8D2AA492E6009BF195 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
 		72EADFFF2A88F77C001998B5 /* WeightX2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightX2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EAE0022A88F77C001998B5 /* WeightX2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightX2App.swift; sourceTree = "<group>"; };
 		72EAE0042A88F77C001998B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +68,15 @@
 		72EAE01A2A88F77F001998B5 /* WeightX2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightX2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EAE01E2A88F77F001998B5 /* WeightX2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightX2UITests.swift; sourceTree = "<group>"; };
 		72EAE0202A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightX2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		72F31B6B2AB4BEFC00B4249F /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		72F31B6D2AB4BF9200B4249F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		72F31B6F2AB4C04200B4249F /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		72F31B712AB4C16100B4249F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		72F31B732AB4C19500B4249F /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
+		72F31B752AB5FA3600B4249F /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
+		72F31B772AB5FA5400B4249F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		72F31B802AB6099000B4249F /* CountryCodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CountryCodes.json; sourceTree = "<group>"; };
+		72F31B8B2AB616BB00B4249F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B125AD2AAE47500001523B /* FirebaseMessaging in Frameworks */,
+				72B125B42AAEC9860001523B /* PromiseKit in Frameworks */,
+				72B125AB2AAE47500001523B /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +130,26 @@
 		72EAE0012A88F77C001998B5 /* WeightX2 */ = {
 			isa = PBXGroup;
 			children = (
+				72F31B8B2AB616BB00B4249F /* GoogleService-Info.plist */,
+				72B6399C2A8BD3380005294D /* Info.plist */,
+				72F31B802AB6099000B4249F /* CountryCodes.json */,
 				72EAE0022A88F77C001998B5 /* WeightX2App.swift */,
 				72EAE0042A88F77C001998B5 /* ContentView.swift */,
+				724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */,
+				7278CDD92AA7A48100263C74 /* OTPView.swift */,
+				7278CDD72AA79AD900263C74 /* HomeScreenView.swift */,
+				72B125A32AADBA690001523B /* AuthModel.swift */,
+				72CF2A8D2AA492E6009BF195 /* Nutrition.swift */,
 				72EAE0062A88F77F001998B5 /* Assets.xcassets */,
 				72EAE0082A88F77F001998B5 /* WeightX2.entitlements */,
 				72EAE0092A88F77F001998B5 /* Preview Content */,
+				72F31B6B2AB4BEFC00B4249F /* PhoneViewModel.swift */,
+				72F31B6D2AB4BF9200B4249F /* Utils.swift */,
+				72F31B6F2AB4C04200B4249F /* CountryModel.swift */,
+				72F31B712AB4C16100B4249F /* AuthenticationService.swift */,
+				72F31B732AB4C19500B4249F /* FirebaseError.swift */,
+				72F31B752AB5FA3600B4249F /* CustomUserDefaults.swift */,
+				72F31B772AB5FA5400B4249F /* Constants.swift */,
 			);
 			path = WeightX2;
 			sourceTree = "<group>";
@@ -145,6 +195,11 @@
 			dependencies = (
 			);
 			name = WeightX2;
+			packageProductDependencies = (
+				72B125AA2AAE47500001523B /* FirebaseAuth */,
+				72B125AC2AAE47500001523B /* FirebaseMessaging */,
+				72B125B32AAEC9860001523B /* PromiseKit */,
+			);
 			productName = WeightX2;
 			productReference = 72EADFFF2A88F77C001998B5 /* WeightX2.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +272,10 @@
 				Base,
 			);
 			mainGroup = 72EADFF62A88F77C001998B5;
+			packageReferences = (
+				72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				72B125B22AAEC9860001523B /* XCRemoteSwiftPackageReference "PromiseKit" */,
+			);
 			productRefGroup = 72EAE0002A88F77C001998B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +292,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F31B812AB60A8400B4249F /* CountryCodes.json in Resources */,
+				72F31B8C2AB616BB00B4249F /* GoogleService-Info.plist in Resources */,
 				72EAE00B2A88F77F001998B5 /* Preview Assets.xcassets in Resources */,
 				72EAE0072A88F77F001998B5 /* Assets.xcassets in Resources */,
 			);
@@ -259,8 +320,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724F20EB2AE2EC270035F4CA /* PhoneNumberView.swift in Sources */,
+				72F31B762AB5FA3600B4249F /* CustomUserDefaults.swift in Sources */,
 				72EAE0052A88F77C001998B5 /* ContentView.swift in Sources */,
 				72EAE0032A88F77C001998B5 /* WeightX2App.swift in Sources */,
+				72F31B6E2AB4BF9200B4249F /* Utils.swift in Sources */,
+				7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */,
+				72F31B722AB4C16100B4249F /* AuthenticationService.swift in Sources */,
+				72F31B702AB4C04200B4249F /* CountryModel.swift in Sources */,
+				7278CDD82AA79AD900263C74 /* HomeScreenView.swift in Sources */,
+				72F31B6C2AB4BEFC00B4249F /* PhoneViewModel.swift in Sources */,
+				72F31B742AB4C19500B4249F /* FirebaseError.swift in Sources */,
+				72F31B782AB5FA5400B4249F /* Constants.swift in Sources */,
+				72CF2A8E2AA492E6009BF195 /* Nutrition.swift in Sources */,
+				72B125A42AADBA690001523B /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = WeightX2/WeightX2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -419,6 +493,11 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeightX2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitShare;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your health data to display step count information, workout information.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to share the Screenshot of health data across social media";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -429,12 +508,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Weightx.WeightX2;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rubixcubeinitiatives.weighttracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -449,6 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = WeightX2/WeightX2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -457,6 +537,11 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeightX2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitShare;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your health data to display step count information, workout information.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to share the Screenshot of health data across social media";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -467,12 +552,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Weightx.WeightX2;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rubixcubeinitiatives.weighttracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -612,6 +697,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		72B125B22AAEC9860001523B /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72B125AA2AAE47500001523B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		72B125AC2AAE47500001523B /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		72B125B32AAEC9860001523B /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72B125B22AAEC9860001523B /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72EADFF72A88F77C001998B5 /* Project object */;
 }
