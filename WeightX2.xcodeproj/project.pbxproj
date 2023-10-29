@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		724F20EB2AE2EC270035F4CA /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */; };
+		7258B68E2AEEEC9B004C6C69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7258B68D2AEEEC9B004C6C69 /* GoogleService-Info.plist */; };
 		7278CDD82AA79AD900263C74 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD72AA79AD900263C74 /* HomeScreenView.swift */; };
 		7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD92AA7A48100263C74 /* OTPView.swift */; };
 		72B125A42AADBA690001523B /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B125A32AADBA690001523B /* AuthModel.swift */; };
@@ -30,7 +31,6 @@
 		72F31B762AB5FA3600B4249F /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B752AB5FA3600B4249F /* CustomUserDefaults.swift */; };
 		72F31B782AB5FA5400B4249F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B772AB5FA5400B4249F /* Constants.swift */; };
 		72F31B812AB60A8400B4249F /* CountryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 72F31B802AB6099000B4249F /* CountryCodes.json */; };
-		72F31B8C2AB616BB00B4249F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72F31B8B2AB616BB00B4249F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		7258B68D2AEEEC9B004C6C69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7278CDD72AA79AD900263C74 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		7278CDD92AA7A48100263C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		72B125A32AADBA690001523B /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		72F31B752AB5FA3600B4249F /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
 		72F31B772AB5FA5400B4249F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		72F31B802AB6099000B4249F /* CountryCodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CountryCodes.json; sourceTree = "<group>"; };
-		72F31B8B2AB616BB00B4249F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 		72EAE0012A88F77C001998B5 /* WeightX2 */ = {
 			isa = PBXGroup;
 			children = (
-				72F31B8B2AB616BB00B4249F /* GoogleService-Info.plist */,
+				7258B68D2AEEEC9B004C6C69 /* GoogleService-Info.plist */,
 				72B6399C2A8BD3380005294D /* Info.plist */,
 				72F31B802AB6099000B4249F /* CountryCodes.json */,
 				72EAE0022A88F77C001998B5 /* WeightX2App.swift */,
@@ -293,7 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72F31B812AB60A8400B4249F /* CountryCodes.json in Resources */,
-				72F31B8C2AB616BB00B4249F /* GoogleService-Info.plist in Resources */,
+				7258B68E2AEEEC9B004C6C69 /* GoogleService-Info.plist in Resources */,
 				72EAE00B2A88F77F001998B5 /* Preview Assets.xcassets in Resources */,
 				72EAE0072A88F77F001998B5 /* Assets.xcassets in Resources */,
 			);
