@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 @main
-struct WeightX2App: App {
+struct FitShareApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var phoneViewModel = PhoneViewModel()
     

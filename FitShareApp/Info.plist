@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>We need access to your health data to provide personalized fitness recommendations.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -11,19 +9,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>app-1-612216865191-ios-0ecc6d36ed8abaf6637682</string>
+				<string>app-1-917136752048-ios-8084f2a487976e991baa75</string>
 			</array>
 		</dict>
 	</array>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<true/>
-	<key>NSServices</key>
-	<array/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
 	</array>
-	<key>NSHealthUpdateUsageDescription</key>
-<string>We need access to your health data to provide personalized fitness recommendations.</string>
 </dict>
 </plist>

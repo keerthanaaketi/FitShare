@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		724F20EB2AE2EC270035F4CA /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */; };
 		7258B6902AEFC5E6004C6C69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7258B68F2AEFC5E6004C6C69 /* GoogleService-Info.plist */; };
+		726003002AF296F100B12E7C /* FitShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726002FF2AF296F100B12E7C /* FitShareApp.swift */; };
 		7278CDD82AA79AD900263C74 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD72AA79AD900263C74 /* HomeScreenView.swift */; };
 		7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD92AA7A48100263C74 /* OTPView.swift */; };
 		72B125A42AADBA690001523B /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B125A32AADBA690001523B /* AuthModel.swift */; };
@@ -16,13 +17,12 @@
 		72B125AD2AAE47500001523B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125AC2AAE47500001523B /* FirebaseMessaging */; };
 		72B125B42AAEC9860001523B /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125B32AAEC9860001523B /* PromiseKit */; };
 		72CF2A8E2AA492E6009BF195 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF2A8D2AA492E6009BF195 /* Nutrition.swift */; };
-		72EAE0032A88F77C001998B5 /* WeightX2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0022A88F77C001998B5 /* WeightX2App.swift */; };
 		72EAE0052A88F77C001998B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0042A88F77C001998B5 /* ContentView.swift */; };
 		72EAE0072A88F77F001998B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72EAE0062A88F77F001998B5 /* Assets.xcassets */; };
 		72EAE00B2A88F77F001998B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72EAE00A2A88F77F001998B5 /* Preview Assets.xcassets */; };
-		72EAE0152A88F77F001998B5 /* WeightX2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0142A88F77F001998B5 /* WeightX2Tests.swift */; };
-		72EAE01F2A88F77F001998B5 /* WeightX2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE01E2A88F77F001998B5 /* WeightX2UITests.swift */; };
-		72EAE0212A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0202A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift */; };
+		72EAE0152A88F77F001998B5 /* FitShareAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0142A88F77F001998B5 /* FitShareAppTests.swift */; };
+		72EAE01F2A88F77F001998B5 /* FitShareAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE01E2A88F77F001998B5 /* FitShareAppUITests.swift */; };
+		72EAE0212A88F77F001998B5 /* FitShareAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0202A88F77F001998B5 /* FitShareAppUITestsLaunchTests.swift */; };
 		72F31B6C2AB4BEFC00B4249F /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B6B2AB4BEFC00B4249F /* PhoneViewModel.swift */; };
 		72F31B6E2AB4BF9200B4249F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B6D2AB4BF9200B4249F /* Utils.swift */; };
 		72F31B702AB4C04200B4249F /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F31B6F2AB4C04200B4249F /* CountryModel.swift */; };
@@ -53,22 +53,21 @@
 /* Begin PBXFileReference section */
 		724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		7258B68F2AEFC5E6004C6C69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		726002FF2AF296F100B12E7C /* FitShareApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitShareApp.swift; sourceTree = "<group>"; };
 		7278CDD72AA79AD900263C74 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		7278CDD92AA7A48100263C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		72B125A32AADBA690001523B /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		72B6399C2A8BD3380005294D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		72CF2A8D2AA492E6009BF195 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
-		72EADFFF2A88F77C001998B5 /* WeightX2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightX2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		72EAE0022A88F77C001998B5 /* WeightX2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightX2App.swift; sourceTree = "<group>"; };
+		72EADFFF2A88F77C001998B5 /* FitShareApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitShareApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EAE0042A88F77C001998B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		72EAE0062A88F77F001998B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		72EAE0082A88F77F001998B5 /* WeightX2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeightX2.entitlements; sourceTree = "<group>"; };
 		72EAE00A2A88F77F001998B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		72EAE0102A88F77F001998B5 /* WeightX2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightX2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		72EAE0142A88F77F001998B5 /* WeightX2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightX2Tests.swift; sourceTree = "<group>"; };
-		72EAE01A2A88F77F001998B5 /* WeightX2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightX2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		72EAE01E2A88F77F001998B5 /* WeightX2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightX2UITests.swift; sourceTree = "<group>"; };
-		72EAE0202A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightX2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		72EAE0102A88F77F001998B5 /* FitShareAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitShareAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72EAE0142A88F77F001998B5 /* FitShareAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitShareAppTests.swift; sourceTree = "<group>"; };
+		72EAE01A2A88F77F001998B5 /* FitShareAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitShareAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72EAE01E2A88F77F001998B5 /* FitShareAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitShareAppUITests.swift; sourceTree = "<group>"; };
+		72EAE0202A88F77F001998B5 /* FitShareAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitShareAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		72F31B6B2AB4BEFC00B4249F /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		72F31B6D2AB4BF9200B4249F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		72F31B6F2AB4C04200B4249F /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
@@ -110,9 +109,9 @@
 		72EADFF62A88F77C001998B5 = {
 			isa = PBXGroup;
 			children = (
-				72EAE0012A88F77C001998B5 /* WeightX2 */,
-				72EAE0132A88F77F001998B5 /* WeightX2Tests */,
-				72EAE01D2A88F77F001998B5 /* WeightX2UITests */,
+				72EAE0012A88F77C001998B5 /* FitShareApp */,
+				72EAE0132A88F77F001998B5 /* FitShareAppTests */,
+				72EAE01D2A88F77F001998B5 /* FitShareAppUITests */,
 				72EAE0002A88F77C001998B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,28 +119,27 @@
 		72EAE0002A88F77C001998B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72EADFFF2A88F77C001998B5 /* WeightX2.app */,
-				72EAE0102A88F77F001998B5 /* WeightX2Tests.xctest */,
-				72EAE01A2A88F77F001998B5 /* WeightX2UITests.xctest */,
+				72EADFFF2A88F77C001998B5 /* FitShareApp.app */,
+				72EAE0102A88F77F001998B5 /* FitShareAppTests.xctest */,
+				72EAE01A2A88F77F001998B5 /* FitShareAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		72EAE0012A88F77C001998B5 /* WeightX2 */ = {
+		72EAE0012A88F77C001998B5 /* FitShareApp */ = {
 			isa = PBXGroup;
 			children = (
 				7258B68F2AEFC5E6004C6C69 /* GoogleService-Info.plist */,
 				72B6399C2A8BD3380005294D /* Info.plist */,
 				72F31B802AB6099000B4249F /* CountryCodes.json */,
-				72EAE0022A88F77C001998B5 /* WeightX2App.swift */,
 				72EAE0042A88F77C001998B5 /* ContentView.swift */,
 				724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */,
 				7278CDD92AA7A48100263C74 /* OTPView.swift */,
+				726002FF2AF296F100B12E7C /* FitShareApp.swift */,
 				7278CDD72AA79AD900263C74 /* HomeScreenView.swift */,
 				72B125A32AADBA690001523B /* AuthModel.swift */,
 				72CF2A8D2AA492E6009BF195 /* Nutrition.swift */,
 				72EAE0062A88F77F001998B5 /* Assets.xcassets */,
-				72EAE0082A88F77F001998B5 /* WeightX2.entitlements */,
 				72EAE0092A88F77F001998B5 /* Preview Content */,
 				72F31B6B2AB4BEFC00B4249F /* PhoneViewModel.swift */,
 				72F31B6D2AB4BF9200B4249F /* Utils.swift */,
@@ -151,7 +149,7 @@
 				72F31B752AB5FA3600B4249F /* CustomUserDefaults.swift */,
 				72F31B772AB5FA5400B4249F /* Constants.swift */,
 			);
-			path = WeightX2;
+			path = FitShareApp;
 			sourceTree = "<group>";
 		};
 		72EAE0092A88F77F001998B5 /* Preview Content */ = {
@@ -162,29 +160,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		72EAE0132A88F77F001998B5 /* WeightX2Tests */ = {
+		72EAE0132A88F77F001998B5 /* FitShareAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				72EAE0142A88F77F001998B5 /* WeightX2Tests.swift */,
+				72EAE0142A88F77F001998B5 /* FitShareAppTests.swift */,
 			);
-			path = WeightX2Tests;
+			path = FitShareAppTests;
 			sourceTree = "<group>";
 		};
-		72EAE01D2A88F77F001998B5 /* WeightX2UITests */ = {
+		72EAE01D2A88F77F001998B5 /* FitShareAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				72EAE01E2A88F77F001998B5 /* WeightX2UITests.swift */,
-				72EAE0202A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift */,
+				72EAE01E2A88F77F001998B5 /* FitShareAppUITests.swift */,
+				72EAE0202A88F77F001998B5 /* FitShareAppUITestsLaunchTests.swift */,
 			);
-			path = WeightX2UITests;
+			path = FitShareAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		72EADFFE2A88F77C001998B5 /* WeightX2 */ = {
+		72EADFFE2A88F77C001998B5 /* FitShareApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72EAE0242A88F77F001998B5 /* Build configuration list for PBXNativeTarget "WeightX2" */;
+			buildConfigurationList = 72EAE0242A88F77F001998B5 /* Build configuration list for PBXNativeTarget "FitShareApp" */;
 			buildPhases = (
 				72EADFFB2A88F77C001998B5 /* Sources */,
 				72EADFFC2A88F77C001998B5 /* Frameworks */,
@@ -194,19 +192,19 @@
 			);
 			dependencies = (
 			);
-			name = WeightX2;
+			name = FitShareApp;
 			packageProductDependencies = (
 				72B125AA2AAE47500001523B /* FirebaseAuth */,
 				72B125AC2AAE47500001523B /* FirebaseMessaging */,
 				72B125B32AAEC9860001523B /* PromiseKit */,
 			);
 			productName = WeightX2;
-			productReference = 72EADFFF2A88F77C001998B5 /* WeightX2.app */;
+			productReference = 72EADFFF2A88F77C001998B5 /* FitShareApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		72EAE00F2A88F77F001998B5 /* WeightX2Tests */ = {
+		72EAE00F2A88F77F001998B5 /* FitShareAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72EAE0272A88F77F001998B5 /* Build configuration list for PBXNativeTarget "WeightX2Tests" */;
+			buildConfigurationList = 72EAE0272A88F77F001998B5 /* Build configuration list for PBXNativeTarget "FitShareAppTests" */;
 			buildPhases = (
 				72EAE00C2A88F77F001998B5 /* Sources */,
 				72EAE00D2A88F77F001998B5 /* Frameworks */,
@@ -217,14 +215,14 @@
 			dependencies = (
 				72EAE0122A88F77F001998B5 /* PBXTargetDependency */,
 			);
-			name = WeightX2Tests;
+			name = FitShareAppTests;
 			productName = WeightX2Tests;
-			productReference = 72EAE0102A88F77F001998B5 /* WeightX2Tests.xctest */;
+			productReference = 72EAE0102A88F77F001998B5 /* FitShareAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		72EAE0192A88F77F001998B5 /* WeightX2UITests */ = {
+		72EAE0192A88F77F001998B5 /* FitShareAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72EAE02A2A88F77F001998B5 /* Build configuration list for PBXNativeTarget "WeightX2UITests" */;
+			buildConfigurationList = 72EAE02A2A88F77F001998B5 /* Build configuration list for PBXNativeTarget "FitShareAppUITests" */;
 			buildPhases = (
 				72EAE0162A88F77F001998B5 /* Sources */,
 				72EAE0172A88F77F001998B5 /* Frameworks */,
@@ -235,9 +233,9 @@
 			dependencies = (
 				72EAE01C2A88F77F001998B5 /* PBXTargetDependency */,
 			);
-			name = WeightX2UITests;
+			name = FitShareAppUITests;
 			productName = WeightX2UITests;
-			productReference = 72EAE01A2A88F77F001998B5 /* WeightX2UITests.xctest */;
+			productReference = 72EAE01A2A88F77F001998B5 /* FitShareAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +261,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 72EADFFA2A88F77C001998B5 /* Build configuration list for PBXProject "WeightX2" */;
+			buildConfigurationList = 72EADFFA2A88F77C001998B5 /* Build configuration list for PBXProject "FitShareApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -280,9 +278,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72EADFFE2A88F77C001998B5 /* WeightX2 */,
-				72EAE00F2A88F77F001998B5 /* WeightX2Tests */,
-				72EAE0192A88F77F001998B5 /* WeightX2UITests */,
+				72EADFFE2A88F77C001998B5 /* FitShareApp */,
+				72EAE00F2A88F77F001998B5 /* FitShareAppTests */,
+				72EAE0192A88F77F001998B5 /* FitShareAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,9 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				724F20EB2AE2EC270035F4CA /* PhoneNumberView.swift in Sources */,
+				726003002AF296F100B12E7C /* FitShareApp.swift in Sources */,
 				72F31B762AB5FA3600B4249F /* CustomUserDefaults.swift in Sources */,
 				72EAE0052A88F77C001998B5 /* ContentView.swift in Sources */,
-				72EAE0032A88F77C001998B5 /* WeightX2App.swift in Sources */,
 				72F31B6E2AB4BF9200B4249F /* Utils.swift in Sources */,
 				7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */,
 				72F31B722AB4C16100B4249F /* AuthenticationService.swift in Sources */,
@@ -341,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72EAE0152A88F77F001998B5 /* WeightX2Tests.swift in Sources */,
+				72EAE0152A88F77F001998B5 /* FitShareAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,8 +347,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72EAE0212A88F77F001998B5 /* WeightX2UITestsLaunchTests.swift in Sources */,
-				72EAE01F2A88F77F001998B5 /* WeightX2UITests.swift in Sources */,
+				72EAE0212A88F77F001998B5 /* FitShareAppUITestsLaunchTests.swift in Sources */,
+				72EAE01F2A88F77F001998B5 /* FitShareAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,12 +357,12 @@
 /* Begin PBXTargetDependency section */
 		72EAE0122A88F77F001998B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 72EADFFE2A88F77C001998B5 /* WeightX2 */;
+			target = 72EADFFE2A88F77C001998B5 /* FitShareApp */;
 			targetProxy = 72EAE0112A88F77F001998B5 /* PBXContainerItemProxy */;
 		};
 		72EAE01C2A88F77F001998B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 72EADFFE2A88F77C001998B5 /* WeightX2 */;
+			target = 72EADFFE2A88F77C001998B5 /* FitShareApp */;
 			targetProxy = 72EAE01B2A88F77F001998B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -373,6 +371,7 @@
 		72EAE0222A88F77F001998B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -423,6 +422,8 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -431,6 +432,7 @@
 		72EAE0232A88F77F001998B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -474,6 +476,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -485,18 +489,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = WeightX2/WeightX2.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FitShareApp/FitShareApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeightX2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FitShareApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 3W37J33N79;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeightX2/Info.plist;
+				INFOPLIST_FILE = FitShareApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FitShare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your health data to display step count information, workout information.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need access to your health data to provide personalized fitness recommendations.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to share the Screenshot of health data across social media";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -513,10 +518,11 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rubixcubeinitiatives.weighttracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rubixcubeinitiatives.fitshare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,18 +535,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = WeightX2/WeightX2.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FitShareApp/FitShareApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeightX2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FitShareApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 3W37J33N79;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeightX2/Info.plist;
+				INFOPLIST_FILE = FitShareApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FitShare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your health data to display step count information, workout information.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need access to your health data to provide personalized fitness recommendations.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to share the Screenshot of health data across social media";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -557,10 +564,11 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rubixcubeinitiatives.weighttracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rubixcubeinitiatives.fitshare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,7 +594,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightX2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeightX2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitShareApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitShareApp";
 			};
 			name = Debug;
 		};
@@ -609,7 +617,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightX2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeightX2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitShareApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitShareApp";
 			};
 			name = Release;
 		};
@@ -660,7 +668,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		72EADFFA2A88F77C001998B5 /* Build configuration list for PBXProject "WeightX2" */ = {
+		72EADFFA2A88F77C001998B5 /* Build configuration list for PBXProject "FitShareApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72EAE0222A88F77F001998B5 /* Debug */,
@@ -669,7 +677,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72EAE0242A88F77F001998B5 /* Build configuration list for PBXNativeTarget "WeightX2" */ = {
+		72EAE0242A88F77F001998B5 /* Build configuration list for PBXNativeTarget "FitShareApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72EAE0252A88F77F001998B5 /* Debug */,
@@ -678,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72EAE0272A88F77F001998B5 /* Build configuration list for PBXNativeTarget "WeightX2Tests" */ = {
+		72EAE0272A88F77F001998B5 /* Build configuration list for PBXNativeTarget "FitShareAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72EAE0282A88F77F001998B5 /* Debug */,
@@ -687,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72EAE02A2A88F77F001998B5 /* Build configuration list for PBXNativeTarget "WeightX2UITests" */ = {
+		72EAE02A2A88F77F001998B5 /* Build configuration list for PBXNativeTarget "FitShareAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72EAE02B2A88F77F001998B5 /* Debug */,

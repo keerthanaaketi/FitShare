@@ -3,28 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDP1qP0DBk650bUVBL2UfYk957PtA86KM8</string>
+	<string>AIzaSyA034A5NBoYnjglzOuAyHUb4Po6RZqq6gw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>612216865191</string>
+	<string>917136752048</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.rubixcubeinitiatives.weighttracker</string>
+	<string>com.rubixcubeinitiatives.fitshare</string>
 	<key>PROJECT_ID</key>
-	<string>fitshare-bc5f5</string>
+	<string>fitshare-37f81</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fitshare-bc5f5.appspot.com</string>
+	<string>fitshare-37f81.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:612216865191:ios:0ecc6d36ed8abaf6637682</string>
+	<string>1:917136752048:ios:8084f2a487976e991baa75</string>
 </dict>
 </plist>

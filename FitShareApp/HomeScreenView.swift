@@ -55,7 +55,7 @@ public struct HomeScreenView: View {
                         .padding()
                         .position(x: UIScreen.main.bounds.width-20, y: 20)
                 )
-                Button("\n\nRecheck") {
+                Button("Recheck") {
                     print(phoneViewModel.isSignedIn)
                     refreshStepCount()
                     fetchWorkoutsForToday()
@@ -63,7 +63,7 @@ public struct HomeScreenView: View {
                     fetchNutritionData()
                 }
                 
-                Text("\n\nStep count: \(Int(stepCount))").font(.title)
+                Text("\nStep count: \(Int(stepCount))").font(.title)
                     .onAppear {
                         requestAuthorization()
                         refreshStepCount()
@@ -77,29 +77,29 @@ public struct HomeScreenView: View {
                // Text("Disclaimer: Just recheck is not going to > steps")
                 if stepCount < 10000 {
                     let remainingSteps = Int(10000 - stepCount)
-                    Text("\nSteps left for your 10k goal: \(remainingSteps)")
+                    Text("Steps left for 10k: \(remainingSteps)")
                         .foregroundColor(.red) // You can adjust the color as needed
                         .font(.subheadline)
                         .padding(.bottom, 20)
                 }
                 if stepCount >= 10000 {
-                    Text("\nWohooo you did more than 10k steps")
+                    Text("Wohooo you did more than 10k steps")
                         .foregroundColor(.red) // You can adjust the color as needed
                         .font(.subheadline)
                         .padding(.bottom, 20)
                 }
-                VStack {Text("\nWorkouts today").font(.title)
-                    List(workouts, id: \.self) { workout in
-                        VStack(alignment: .leading) {
-                            Text("\nActivity: \(readableWorkoutActivityType(workout.workoutActivityType))")
-                            Text("Start Date: \(workout.startDate)")
-                            Text("End Date: \(workout.endDate)")
-                            Text("Duration: \(workout.duration / 60) minutes")
-                        }
+                VStack {
+                    
+                    Text("\nWorkouts today").font(.title)
+                    
+                    if workouts.isEmpty {
+                        Text("No workouts today")
+                    } else {
+                        Text("No of workouts done today: \(Int(workouts.count))")
                     }
                 }
                 VStack {
-                    Text("Sleep time").font(.title)
+                    Text("\nSleep time").font(.title)
                     
                     let inBedSamples = sleepSamples.filter { $0.value == HKCategoryValueSleepAnalysis.inBed.rawValue }
                     
@@ -121,6 +121,22 @@ public struct HomeScreenView: View {
                     Text("Total protein: \(Int(protein))")
                     Text("Total carbs: \(Int(carbohydrates))")
                     Text("Total fats: \(Int(fat))")
+                }
+                
+                VStack {
+                    Text("\nWorkouts today").font(.title)
+                    if workouts.isEmpty {
+                        Text("No workouts today")
+                    } else {
+                        NavigationView {
+                            List(workouts, id: \.workoutActivityType) { workout in
+                                VStack(alignment: .leading) {
+                                    Text("Activity: \(readableWorkoutActivityType(workout.workoutActivityType))")
+                                    Text("Duration: \(workout.duration / 60) minutes")
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -325,14 +341,13 @@ public struct HomeScreenView: View {
     }
     
     private func fetchWorkoutsForToday() {
-        let healthStore = HKHealthStore()
         let workoutType = HKObjectType.workoutType()
         
-        let startOfDay = Calendar.current.startOfDay(for: Date())
         let now = Date()
+        let startOfToday = Calendar.current.startOfDay(for: Date())
         
         
-        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfToday, end: now, options: .strictStartDate)
         
         let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, samples, error) in
             if let activities = samples as? [HKWorkout] {
@@ -343,6 +358,7 @@ public struct HomeScreenView: View {
         }
         
         healthStore.execute(query)
+        print(workouts.count)
     }
     
     private func fetchSleepData() {
