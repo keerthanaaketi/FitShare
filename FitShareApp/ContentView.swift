@@ -12,27 +12,33 @@ import FirebaseAuth
 struct ContentView: View {
         @ObservedObject var phoneViewModel: PhoneViewModel
         @State private var phoneNumber: String = ""
-    
-    
+    @ObservedObject var goalModel : GoalModel
+    @ObservedObject var shareList: ShareList
     @State private var isNavigationActive = false
 
         var body: some View {
             VStack {
-                if let user = Auth.auth().currentUser {
-                    HomeScreenView(phoneViewModel: phoneViewModel)
+                if Auth.auth().currentUser != nil {
+                    if let savedValue = UserDefaults.standard.string(forKey: "goalSet"), savedValue == "true"{
+                        HomeScreenView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
+                    }
+                    else{
+                        GoalSheet(goalModel: goalModel, phoneViewModel: phoneViewModel, shareList: ShareList())
+                    }
                 }
                 else{
                     PhoneNumberView(phoneViewModel: phoneViewModel)
+                        
                 }
             }
             
         }
     }
-/*struct ContentView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
      static var previews: some View {
-         ContentView(phoneViewModel: <#PhoneViewModel#>)
+         ContentView(phoneViewModel: PhoneViewModel(), goalModel: GoalModel(), shareList: ShareList())
     }
-}*/
+}
 
 
 

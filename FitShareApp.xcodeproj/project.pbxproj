@@ -10,6 +10,11 @@
 		724F20EB2AE2EC270035F4CA /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */; };
 		7258B6902AEFC5E6004C6C69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7258B68F2AEFC5E6004C6C69 /* GoogleService-Info.plist */; };
 		726003002AF296F100B12E7C /* FitShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726002FF2AF296F100B12E7C /* FitShareApp.swift */; };
+		72658A5E2B015455004C7707 /* GoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72658A5D2B015455004C7707 /* GoalSheet.swift */; };
+		72658A602B015A6C004C7707 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 72658A5F2B015A6C004C7707 /* FirebaseDatabase */; };
+		72658A622B015A6C004C7707 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 72658A612B015A6C004C7707 /* FirebaseDatabaseSwift */; };
+		72658A642B015C23004C7707 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72658A632B015C23004C7707 /* GoalModel.swift */; };
+		72658A662B0290A7004C7707 /* ShareList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72658A652B0290A7004C7707 /* ShareList.swift */; };
 		7278CDD82AA79AD900263C74 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD72AA79AD900263C74 /* HomeScreenView.swift */; };
 		7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD92AA7A48100263C74 /* OTPView.swift */; };
 		72B125A42AADBA690001523B /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B125A32AADBA690001523B /* AuthModel.swift */; };
@@ -54,6 +59,9 @@
 		724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		7258B68F2AEFC5E6004C6C69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		726002FF2AF296F100B12E7C /* FitShareApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitShareApp.swift; sourceTree = "<group>"; };
+		72658A5D2B015455004C7707 /* GoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSheet.swift; sourceTree = "<group>"; };
+		72658A632B015C23004C7707 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
+		72658A652B0290A7004C7707 /* ShareList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareList.swift; sourceTree = "<group>"; };
 		7278CDD72AA79AD900263C74 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		7278CDD92AA7A48100263C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		72B125A32AADBA690001523B /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -83,8 +91,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72658A622B015A6C004C7707 /* FirebaseDatabaseSwift in Frameworks */,
 				72B125AD2AAE47500001523B /* FirebaseMessaging in Frameworks */,
 				72B125B42AAEC9860001523B /* PromiseKit in Frameworks */,
+				72658A602B015A6C004C7707 /* FirebaseDatabase in Frameworks */,
 				72B125AB2AAE47500001523B /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,16 +142,19 @@
 				7258B68F2AEFC5E6004C6C69 /* GoogleService-Info.plist */,
 				72B6399C2A8BD3380005294D /* Info.plist */,
 				72F31B802AB6099000B4249F /* CountryCodes.json */,
+				726002FF2AF296F100B12E7C /* FitShareApp.swift */,
 				72EAE0042A88F77C001998B5 /* ContentView.swift */,
 				724F20EA2AE2EC270035F4CA /* PhoneNumberView.swift */,
 				7278CDD92AA7A48100263C74 /* OTPView.swift */,
-				726002FF2AF296F100B12E7C /* FitShareApp.swift */,
+				72658A5D2B015455004C7707 /* GoalSheet.swift */,
 				7278CDD72AA79AD900263C74 /* HomeScreenView.swift */,
 				72B125A32AADBA690001523B /* AuthModel.swift */,
 				72CF2A8D2AA492E6009BF195 /* Nutrition.swift */,
 				72EAE0062A88F77F001998B5 /* Assets.xcassets */,
 				72EAE0092A88F77F001998B5 /* Preview Content */,
 				72F31B6B2AB4BEFC00B4249F /* PhoneViewModel.swift */,
+				72658A652B0290A7004C7707 /* ShareList.swift */,
+				72658A632B015C23004C7707 /* GoalModel.swift */,
 				72F31B6D2AB4BF9200B4249F /* Utils.swift */,
 				72F31B6F2AB4C04200B4249F /* CountryModel.swift */,
 				72F31B712AB4C16100B4249F /* AuthenticationService.swift */,
@@ -197,6 +210,8 @@
 				72B125AA2AAE47500001523B /* FirebaseAuth */,
 				72B125AC2AAE47500001523B /* FirebaseMessaging */,
 				72B125B32AAEC9860001523B /* PromiseKit */,
+				72658A5F2B015A6C004C7707 /* FirebaseDatabase */,
+				72658A612B015A6C004C7707 /* FirebaseDatabaseSwift */,
 			);
 			productName = WeightX2;
 			productReference = 72EADFFF2A88F77C001998B5 /* FitShareApp.app */;
@@ -326,11 +341,14 @@
 				7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */,
 				72F31B722AB4C16100B4249F /* AuthenticationService.swift in Sources */,
 				72F31B702AB4C04200B4249F /* CountryModel.swift in Sources */,
+				72658A5E2B015455004C7707 /* GoalSheet.swift in Sources */,
 				7278CDD82AA79AD900263C74 /* HomeScreenView.swift in Sources */,
 				72F31B6C2AB4BEFC00B4249F /* PhoneViewModel.swift in Sources */,
 				72F31B742AB4C19500B4249F /* FirebaseError.swift in Sources */,
+				72658A662B0290A7004C7707 /* ShareList.swift in Sources */,
 				72F31B782AB5FA5400B4249F /* Constants.swift in Sources */,
 				72CF2A8E2AA492E6009BF195 /* Nutrition.swift in Sources */,
+				72658A642B015C23004C7707 /* GoalModel.swift in Sources */,
 				72B125A42AADBA690001523B /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +750,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		72658A5F2B015A6C004C7707 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		72658A612B015A6C004C7707 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
 		72B125AA2AAE47500001523B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

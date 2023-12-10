@@ -11,6 +11,9 @@ public struct OTPView: View {
 
     public var body: some View {
         VStack {
+            Text("FitShare")
+                .font(.title)
+                .padding(.bottom, 20)
             Text("Sending OTP to: \(phoneViewModel.phoneNumber)")
                 .fontWeight(.semibold)
                 .frame(width: nil, height: nil, alignment: .leading)

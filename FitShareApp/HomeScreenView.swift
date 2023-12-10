@@ -8,136 +8,292 @@
 import Foundation
 import SwiftUI
 import HealthKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseDatabaseSwift
 
 let healthStore = HKHealthStore()
 
 public struct HomeScreenView: View {
     let healthStore = HKHealthStore()
-    @State private var stepCount: Double = 0
+    @State private var stepCount: Int = 0
     @State private var workouts: [HKWorkout] = []
     @State private var sleepSamples: [HKCategorySample] = []
-    @State var calories: Double = 0.0
-    @State var protein: Double = 0.0
-    @State var fat: Double = 0.0
-    @State var carbohydrates: Double = 0.0
+    @State var calories: Int = 0
+    @State var protein: Int = 0
+    @State var fat: Int = 0
+    @State var carbohydrates: Int = 0
     @ObservedObject var phoneViewModel: PhoneViewModel
-    
+    @ObservedObject var goalModel: GoalModel
+    @State private var showSettings = false
+    @ObservedObject var shareList: ShareList
     public var body: some View {
         ScrollView{
             VStack {
                 HStack{
+                    Spacer()
                     Button(action: {
-                        phoneViewModel.signout()
-                        PhoneNumberView(phoneViewModel: phoneViewModel)
+                        self.showSettings.toggle()
                     }) {
-                        HStack {
-                            Image(systemName: "person.fill.xmark")
-                                .font(.title)
-                                .padding(.trailing, 10)
-                        }
+                        Image(systemName: "gearshape.fill")
+                            .imageScale(.large)
+                            .foregroundColor(.blue)
                     }
                     .padding()
-                    .position(x: 40, y: 20)
+                    Spacer()
+                    (Text("FitShare").bold().font(.title))
+                    
+                    Spacer()
+                    Spacer()
+                        .overlay(
+                            Button(action: {
+                                if let screenshot = takeScreenshot() {
+                                    shareScreenshot(image: screenshot)
+                                }
+                            }) {
+                                HStack {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .font(.title)
+                                    //.padding(.trailing, 10)
+                                }
+                            }
+                                .padding()
+                            //.position(x: UIScreen.main.bounds.width-20, y: 40)
+                        )
                     Spacer()
                 }
-                .overlay(
-                    Button(action: {
-                        if let screenshot = takeScreenshot() {
-                            shareScreenshot(image: screenshot)
-                        }
-                    }) {
-                        HStack {
-                            Image(systemName: "square.and.arrow.up")
-                                .font(.title)
-                                .padding(.trailing, 10)
+                Button("\nRecheck") {
+                    if let userID = getUserID() {
+                        getUserData(userID: userID) { userData in
+                            if let goalStepCount = userData?["goalStepCount"] as? Int,
+                               let goalNutrtionCount = userData?["goalNutrition"] as? Int,
+                               let goalProtein = userData?["goalProtein"] as? Int,
+                               let goalFat = userData?["goalFat"] as? Int,
+                               let goalCarbs = userData?["goalCarbs"] as? Int,
+                               let goalWorkouts = userData?["goalWorkouts"] as? Int,
+                               let goalSleep = userData?["goalSleep"] as? Int  {
+                                goalModel.stepGoal = String(goalStepCount)
+                                goalModel.nutritionGoal = String(goalNutrtionCount)
+                                goalModel.proteinGoal = String(goalProtein)
+                                goalModel.fatsGoal = String(goalFat)
+                                goalModel.carbsGoal = String(goalCarbs)
+                                goalModel.workoutsGoal = String(goalWorkouts)
+                                goalModel.sleepGoal = String(goalSleep)
+                            }
                         }
                     }
-                        .padding()
-                        .position(x: UIScreen.main.bounds.width-20, y: 20)
-                )
-                Button("Recheck") {
                     print(phoneViewModel.isSignedIn)
                     refreshStepCount()
                     fetchWorkoutsForToday()
                     fetchSleepData()
                     fetchNutritionData()
                 }
+                // Text("Disclaimer: Just recheck is not going to > steps")
                 
-                Text("\nStep count: \(Int(stepCount))").font(.title)
-                    .onAppear {
-                        requestAuthorization()
-                        refreshStepCount()
-                        fetchWorkoutsForToday()
-                        fetchSleepData()
-                        fetchNutritionData()
-                    }
-                
-                
-                
-               // Text("Disclaimer: Just recheck is not going to > steps")
-                if stepCount < 10000 {
-                    let remainingSteps = Int(10000 - stepCount)
-                    Text("Steps left for 10k: \(remainingSteps)")
-                        .foregroundColor(.red) // You can adjust the color as needed
-                        .font(.subheadline)
-                        .padding(.bottom, 20)
-                }
-                if stepCount >= 10000 {
-                    Text("Wohooo you did more than 10k steps")
-                        .foregroundColor(.red) // You can adjust the color as needed
-                        .font(.subheadline)
-                        .padding(.bottom, 20)
-                }
-                VStack {
-                    
-                    Text("\nWorkouts today").font(.title)
-                    
-                    if workouts.isEmpty {
-                        Text("No workouts today")
-                    } else {
-                        Text("No of workouts done today: \(Int(workouts.count))")
+                let stepGoalVal = Int(goalModel.stepGoal) ?? 0
+                let remainingSteps = Int(stepGoalVal - stepCount)
+                if(shareList.showSteps){
+                    SlabView(title: "STEPS",total: String(stepCount),goal: String(Int(stepGoalVal)), remaining: String(remainingSteps))
+                    if stepCount >= Int(stepGoalVal) {
+                        Text("Wohooo you did more than your goal steps")
+                            .foregroundColor(.red) // You can adjust the color as needed
+                            .font(.caption)
+                            .padding(.bottom, 20)
                     }
                 }
-                VStack {
-                    Text("\nSleep time").font(.title)
-                    
-                    let inBedSamples = sleepSamples.filter { $0.value == HKCategoryValueSleepAnalysis.inBed.rawValue }
-                    
-                    if !inBedSamples.isEmpty {
-                        let totalInBedDurationInSeconds = inBedSamples.reduce(0.0) { $0 + $1.endDate.timeIntervalSince($1.startDate) }
-                        
-                        let totalInBedDurationInMinutes = Int(totalInBedDurationInSeconds) / 60
-                        let hours = totalInBedDurationInMinutes / 60
-                        let minutes = totalInBedDurationInMinutes % 60
-                        
-                        Text("Total In Bed Time: \(hours) hours \(minutes) minutes")
-                    } else {
-                        Text("No 'In Bed' sleep data available.")
-                    }
-                }
-                VStack {
-                    Text("\nNutrition").font(.title)
-                    Text("Total calories: \(Int(calories))")
-                    Text("Total protein: \(Int(protein))")
-                    Text("Total carbs: \(Int(carbohydrates))")
-                    Text("Total fats: \(Int(fat))")
-                }
-                
-                VStack {
-                    Text("\nWorkouts today").font(.title)
-                    if workouts.isEmpty {
-                        Text("No workouts today")
-                    } else {
-                        NavigationView {
-                            List(workouts, id: \.workoutActivityType) { workout in
-                                VStack(alignment: .leading) {
-                                    Text("Activity: \(readableWorkoutActivityType(workout.workoutActivityType))")
-                                    Text("Duration: \(workout.duration / 60) minutes")
+                if(shareList.showWorkout){
+                    VStack {
+                        var totalCaloriesBurnt: Int {
+                            workouts.reduce(0) { total, workout in
+                                if let energyBurned = workout.totalEnergyBurned {
+                                    return total + Int(energyBurned.doubleValue(for: HKUnit.calorie()))/1000
+                                } else {
+                                    return total
                                 }
                             }
                         }
+                        if workouts.isEmpty {
+                            HStack{
+                                Text("\tWORKOUTS").font(.title2).bold()
+                                Spacer()
+                            }
+                            Text("No workouts today")
+                        } else {
+                            SlabView(title: "WORKOUTS",total: "\(totalCaloriesBurnt) cals",goal: goalModel.workoutsGoal, remaining: String(Int(goalModel.workoutsGoal)!-totalCaloriesBurnt))
+                            NavigationView {
+                                List(workouts, id: \.workoutActivityType) { workout in
+                                    VStack(alignment: .leading) {
+                                        Text("Activity: \(readableWorkoutActivityType(workout.workoutActivityType))").font(.caption)
+                                        var duration = Int(workout.duration / 60)
+                                        Text("Duration: \(duration) minutes").font(.caption)
+                                    }.padding()
+                                }
+                            }.frame(width: 390, height: 80)
+                        }
                     }
                 }
+                if(shareList.showNutrition){
+                    VStack {
+                        NutritionSlabView(title: "NUTRITION",total: "\(calories) Cals",goal: goalModel.nutritionGoal, remaining: String((Int(goalModel.nutritionGoal) ?? 0)-calories),protein: protein,fat: fat,carbs: Int(carbohydrates),proteinGoal: Int(goalModel.proteinGoal) ?? 0,fatGoal: Int(goalModel.fatsGoal) ?? 0,carbsGoal: Int(goalModel.carbsGoal) ?? 0)
+                    }
+                }
+                if(shareList.showSleep){
+                    let inBedSamples = sleepSamples.filter { $0.value == HKCategoryValueSleepAnalysis.inBed.rawValue }
+                
+                if !inBedSamples.isEmpty {
+                    let totalInBedDurationInSeconds = inBedSamples.reduce(0.0) { $0 + $1.endDate.timeIntervalSince($1.startDate) }
+                    
+                    let totalInBedDurationInMinutes = Int(totalInBedDurationInSeconds) / 60
+                    let hours = totalInBedDurationInMinutes / 60
+                    let minutes = totalInBedDurationInMinutes % 60
+                    let reminingHours = (Int(goalModel.sleepGoal) ?? 8)-hours
+                    SlabView(title: "SLEEP",total: "\(hours) hours \(minutes) minutes",goal: goalModel.sleepGoal, remaining: String(reminingHours))
+                } else {
+                    HStack{
+                        Text("\tSLEEP").font(.title2).bold()
+                        Spacer()
+                    }
+                    Text("No 'In Bed' sleep data available.")
+                }
+            }
+            }.onAppear {
+                if let userID = getUserID() {
+                    getUserData(userID: userID) { userData in
+                        if let goalStepCount = userData?["goalStepCount"] as? Int,
+                        let goalNutrtionCount = userData?["goalNutrition"] as? Int,
+                        let goalProtein = userData?["goalProtein"] as? Int,
+                        let goalFat = userData?["goalFat"] as? Int,
+                        let goalCarbs = userData?["goalCarbs"] as? Int,
+                        let goalWorkouts = userData?["goalWorkouts"] as? Int,
+                        let goalSleep = userData?["goalSleep"] as? Int,
+                        let showStep = userData?["showStep"] as? Bool,
+                        let showWorkout = userData?["showWorkout"] as? Bool,
+                        let showNutrition = userData?["showNutrition"] as? Bool,
+                        let showSleep = userData?["showSleep"] as? Bool
+                        {
+                            goalModel.stepGoal = String(goalStepCount)
+                            goalModel.nutritionGoal = String(goalNutrtionCount)
+                            goalModel.proteinGoal = String(goalProtein)
+                            goalModel.fatsGoal = String(goalFat)
+                            goalModel.carbsGoal = String(goalCarbs)
+                            goalModel.workoutsGoal = String(goalWorkouts)
+                            goalModel.sleepGoal = String(goalSleep)
+                            shareList.showSteps = showStep
+                            shareList.showNutrition = showNutrition
+                            shareList.showWorkout = showWorkout
+                            shareList.showSleep = showSleep
+                        }
+                    }
+                }
+                    requestAuthorization()
+                    refreshStepCount()
+                    fetchWorkoutsForToday()
+                    fetchSleepData()
+                    fetchNutritionData()
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingsView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
+            }
+        }
+    }
+        
+    struct SlabView: View {
+        var title: String
+        var total: String
+        var goal: String
+        var remaining: String
+        
+        var body: some View {
+            VStack{
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.gray)
+                    .frame(width: 390, height: 90)
+                    .overlay(VStack {
+                        HStack{
+                            Text("\t")
+                            Text(title)
+                                .font(.title2).bold()
+                            Spacer()
+                            Text(total)
+                                .font(.title3)
+                            Spacer()
+                            Spacer()
+                        }
+                        HStack {
+                            Spacer()
+                            Text("Goal:"+goal)
+                                .font(.headline)
+                            Spacer()
+                            Text("Left:"+remaining)
+                                .font(.headline)
+                            Spacer()
+                            
+                        }
+                    }
+                    )
+            }
+        }
+    }
+    struct NutritionSlabView: View {
+        var title: String
+        var total: String
+        var goal: String
+        var remaining: String
+        var protein: Int
+        var fat: Int
+        var carbs: Int
+        var proteinGoal: Int
+        var fatGoal: Int
+        var carbsGoal: Int
+        
+        var body: some View {
+            VStack{
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.gray)
+                    .frame(width: 390, height: 190)
+                    .overlay(VStack {
+                        Spacer()
+                        HStack{
+                            Text("\t")
+                            Text(title)
+                                .font(.title2).bold()
+                            Spacer()
+                            Text(total)
+                                .font(.title3)
+                            Spacer()
+                            Spacer()
+                        }
+                        HStack {
+                            Spacer()
+                            Text("Goal:"+goal)
+                                .font(.headline)
+                            Spacer()
+                            Text("Left:"+remaining)
+                                .font(.headline)
+                            Spacer()
+                            
+                        }
+                        Text("\n")
+                        VStack{
+                            HStack{
+                                Text("Protein").font(.headline).bold()
+                                Text("total:\(protein) goal:\(proteinGoal) left:\(proteinGoal-protein)").font(.title3)
+                            }
+                            HStack{
+                                Text("Fat").font(.headline).bold()
+                                Text("total:\(fat) goal:\(fatGoal) left:\(fatGoal-fat)")
+                                    .font(.title3)
+                            }
+                            HStack{
+                                Text("Carbs").font(.headline).bold()
+                                Text("total:\(carbs) goal:\(carbsGoal) left:\(carbsGoal-carbs)")
+                                    .font(.title3)
+                            }
+                        }
+                        Spacer()
+                    }
+                    )
             }
         }
     }
@@ -175,8 +331,29 @@ public struct HomeScreenView: View {
         UIGraphicsEndImageContext()
         return screenshot
     }
-    
-    private func readableWorkoutActivityType(_ activityType: HKWorkoutActivityType) -> String {
+    func getUserData(userID: String, completion: @escaping ([String: Any]?) -> Void) {
+        let databaseReference = Database.database().reference()
+        let userReference = databaseReference.child("users").child(userID)
+
+        userReference.observeSingleEvent(of: .value) { snapshot in
+            guard snapshot.exists(), let userData = snapshot.value as? [String: Any] else {
+                // User not found or data is not in the expected format
+                completion(nil)
+                return
+            }
+
+            // User data retrieved successfully
+            completion(userData)
+        }
+    }
+    func getUserID() -> String? {
+        if let user = Auth.auth().currentUser {
+            return user.uid
+        }
+        return nil
+    }
+        
+    func readableWorkoutActivityType(_ activityType: HKWorkoutActivityType) -> String {
         switch activityType {
         case .americanFootball:
             return "American Football"
@@ -313,7 +490,7 @@ public struct HomeScreenView: View {
     }
     
 
-    func readStepCount(forToday date: Date, healthStore: HKHealthStore, completion: @escaping (Double) -> Void) {
+    func readStepCount(forToday date: Date, healthStore: HKHealthStore, completion: @escaping (Int) -> Void) {
         guard let stepQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
         
         let startOfDay = Calendar.current.startOfDay(for: date)
@@ -324,23 +501,23 @@ public struct HomeScreenView: View {
         let query = HKStatisticsQuery(quantityType: stepQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, error in
             if let error = error {
                 print("Query error: \(error.localizedDescription)")
-                completion(0.0)
+                completion(0)
                 return
             }
             
             guard let result = result, let sum = result.sumQuantity() else {
-                completion(0.0)
+                completion(0)
                 return
             }
             
-            self.stepCount = sum.doubleValue(for: HKUnit.count())
+            self.stepCount = Int(sum.doubleValue(for: HKUnit.count()))
             completion(stepCount)
         }
         
         healthStore.execute(query)
     }
     
-    private func fetchWorkoutsForToday() {
+    func fetchWorkoutsForToday() {
         let workoutType = HKObjectType.workoutType()
         
         let now = Date()
@@ -361,7 +538,7 @@ public struct HomeScreenView: View {
         print(workouts.count)
     }
     
-    private func fetchSleepData() {
+    func fetchSleepData() {
         let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
         let calendar = Calendar.current
         let now = Date()
@@ -386,7 +563,7 @@ public struct HomeScreenView: View {
         HKHealthStore().execute(query)
     }
     
-    private func fetchNutritionData() {
+    func fetchNutritionData() {
             let now = Date()
             let startOfToday = Calendar.current.startOfDay(for: Date())
 
@@ -397,7 +574,7 @@ public struct HomeScreenView: View {
                                           options: .cumulativeSum) { (_, result, _) in
                 if let sum = result?.sumQuantity() {
                     DispatchQueue.main.async {
-                        self.calories = sum.doubleValue(for: HKUnit.kilocalorie())
+                        self.calories = Int(sum.doubleValue(for: HKUnit.kilocalorie()))
                     }
                 }
             }
@@ -406,7 +583,7 @@ public struct HomeScreenView: View {
                                                   options: .cumulativeSum) { (_, result, _) in
                 if let sum = result?.sumQuantity() {
                     DispatchQueue.main.async {
-                        self.protein = sum.doubleValue(for: HKUnit.gram())
+                        self.protein = Int(sum.doubleValue(for: HKUnit.gram()))
                     }
                 }
             }
@@ -415,7 +592,7 @@ public struct HomeScreenView: View {
                                                   options: .cumulativeSum) { (_, result, _) in
                 if let sum = result?.sumQuantity() {
                     DispatchQueue.main.async {
-                        self.fat = sum.doubleValue(for: HKUnit.gram())
+                        self.fat = Int(sum.doubleValue(for: HKUnit.gram()))
                     }
                 }
             }
@@ -424,7 +601,7 @@ public struct HomeScreenView: View {
                                                   options: .cumulativeSum) { (_, result, _) in
                 if let sum = result?.sumQuantity() {
                     DispatchQueue.main.async {
-                        self.carbohydrates = sum.doubleValue(for: HKUnit.gram())
+                        self.carbohydrates = Int(sum.doubleValue(for: HKUnit.gram()))
                     }
                 }
             }
@@ -434,4 +611,44 @@ public struct HomeScreenView: View {
         healthStore.execute(carbsQuery)
         }
     
+}
+
+struct HomeScreenView_Previews: PreviewProvider {
+     static var previews: some View {
+         HomeScreenView(phoneViewModel: PhoneViewModel(), goalModel: GoalModel(), shareList: ShareList())
+    }
+}
+struct SettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var phoneViewModel: PhoneViewModel
+    @ObservedObject var goalModel: GoalModel
+    @ObservedObject var shareList: ShareList
+    var body: some View {
+        NavigationView {
+            List {
+                NavigationLink(destination: GoalSheet(goalModel: goalModel, phoneViewModel: phoneViewModel, shareList: shareList)) {
+                    Text("Set Goals")
+                }
+
+                Button(action: {
+                    // Perform sign out logic
+                    phoneViewModel.signout()
+                    UserDefaults.standard.set("false", forKey: "goalSet")
+                    PhoneNumberView(phoneViewModel: phoneViewModel)
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Sign Out")
+                        .foregroundColor(.red)
+                }
+            }
+            .navigationBarTitle("Settings")
+            .navigationBarItems(leading:
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Done")
+                }
+            )
+        }
+    }
 }
