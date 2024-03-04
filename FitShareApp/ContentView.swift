@@ -19,15 +19,15 @@ struct ContentView: View {
         var body: some View {
             VStack {
                 if Auth.auth().currentUser != nil {
-                    if let savedValue = UserDefaults.standard.string(forKey: "goalSet"), savedValue == "true"{
-                        HomeScreenView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
-                    }
-                    else{
-                        GoalSheet(goalModel: goalModel, phoneViewModel: phoneViewModel, shareList: ShareList())
-                    }
+                    //if let savedValue = UserDefaults.standard.string(forKey: "goalSet"), savedValue == "true"{
+                        LogoView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
+                   // }
+                    //else{
+                      //  GoalSheet(goalModel: goalModel, phoneViewModel: phoneViewModel, shareList: ShareList())
+                    //}
                 }
                 else{
-                    PhoneNumberView(phoneViewModel: phoneViewModel)
+                    PhoneNumberView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
                         
                 }
             }

@@ -8,12 +8,31 @@ public struct OTPView: View {
     @ObservedObject var phoneViewModel: PhoneViewModel
     @State private var isAuthenticationInProgress = false
     @State private var errorMessage: String? // Added state for error message
-
+    @State private var isVerifiedUser = false
+    @ObservedObject var goalModel : GoalModel
+    @ObservedObject var shareList: ShareList
+    @State private var navigateToLogoView = false
+    
     public var body: some View {
+        contentView
+                    .background(
+                        NavigationLink(
+                            destination: LogoView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList),
+                            isActive: $navigateToLogoView
+                        ) {
+                            EmptyView()
+                        }
+                        .opacity(0)
+                        .accessibility(hidden: true)
+                    )
+    }
+    
+    private var contentView: some View {
         VStack {
             Text("FitShare")
                 .font(.title)
                 .padding(.bottom, 20)
+            
             Text("Sending OTP to: \(phoneViewModel.phoneNumber)")
                 .fontWeight(.semibold)
                 .frame(width: nil, height: nil, alignment: .leading)
@@ -33,17 +52,8 @@ public struct OTPView: View {
                     .foregroundColor(.red)
             }
             
-            VStack {
-                Button("Verify OTP") {
-                    handleVerifyOTP()
-                }
+            verifyOTPButton
                 .padding()
-                .background(phoneViewModel.verificationCode.count == 6 ? Color.blue : Color.gray)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-                .disabled(phoneViewModel.verificationCode.count < 6 || isAuthenticationInProgress)
-            }
-            .padding()
         }
         .onAppear(){
             phoneViewModel.verificationCode = ""
@@ -56,10 +66,24 @@ public struct OTPView: View {
             get: { errorMessage != nil },
             set: { newValue in errorMessage = newValue ? errorMessage : nil }
         )) {
-            Alert(title: Text("Error"), message: Text(errorMessage ?? ""), dismissButton: .default(Text("Retry")) {
+            Alert(title: Text("Wrong OTP"), message: Text(errorMessage ?? ""), dismissButton: .default(Text("Retry")) {
                 phoneViewModel.verificationCode = ""
             })
         }
+       // .background(NavigationLink("", destination: LogoView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList), isActive: $navigateToLogoView)
+         //               .opacity(0)
+           //             .accessibility(hidden: true))
+    }
+    
+    private var verifyOTPButton: some View {
+        Button("Verify OTP") {
+            handleVerifyOTP()
+        }
+        .padding()
+        .background(phoneViewModel.verificationCode.count == 6 ? Color.blue : Color.gray)
+        .foregroundColor(.white)
+        .cornerRadius(8)
+        .disabled(phoneViewModel.verificationCode.count < 6 || isAuthenticationInProgress)
     }
     
     private func handleVerifyOTP() {
@@ -71,6 +95,7 @@ public struct OTPView: View {
                     // Authentication succeeded
                     if phoneViewModel.isVerifiedUser {
                         // Handle successful authentication
+                        navigateToLogoView = true
                     } else {
                         // Handle authentication failure
                         errorMessage = "Authentication failed. Please retry."

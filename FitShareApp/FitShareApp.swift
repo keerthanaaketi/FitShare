@@ -15,9 +15,9 @@ struct FitShareApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView(phoneViewModel: phoneViewModel, goalModel: GoalModel(), shareList: ShareList())
-            }
+            //NavigationView {
+               LaunchView(phoneViewModel: phoneViewModel, goalModel: GoalModel(), shareList: ShareList())
+           // }
            /* ActivateAccountView(phoneViewModel: phoneViewModel)
                 .sheet(isPresented: $phoneViewModel.showPhoneNumberEntry) {
                     ContentView(phoneViewModel: phoneViewModel)

@@ -14,6 +14,16 @@ import FirebaseDatabase
 import FirebaseDatabaseSwift
 
 let healthStore = HKHealthStore()
+struct ActivityViewController: UIViewControllerRepresentable {
+    var activityItems: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        return activityViewController
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+}
 
 public struct HomeScreenView: View {
     let healthStore = HKHealthStore()
@@ -28,9 +38,16 @@ public struct HomeScreenView: View {
     @ObservedObject var goalModel: GoalModel
     @State private var showSettings = false
     @ObservedObject var shareList: ShareList
+    @State private var isPresentingActivityViewController = false
+    @State private var screenshot: UIImage? = nil
+    @Environment(\.colorScheme) var colorScheme
+    @State private var isDarkTheme = true
+    
     public var body: some View {
+        let imageName = isDarkTheme ? "FitShareDark" : "FitShareLaunch"
         ScrollView{
             VStack {
+               
                 HStack{
                     Spacer()
                     Button(action: {
@@ -42,28 +59,32 @@ public struct HomeScreenView: View {
                     }
                     .padding()
                     Spacer()
-                    (Text("FitShare").bold().font(.title))
-                    
+                   // (Text("FitShare").bold().font(.title))
+                    Image(imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.black) // Adjust the color of the logo as needed
+                        .frame(width: 200, height: 200)
+                        .clipShape(Circle())
                     Spacer()
                     Spacer()
-                        .overlay(
-                            Button(action: {
-                                if let screenshot = takeScreenshot() {
-                                    shareScreenshot(image: screenshot)
-                                }
-                            }) {
-                                HStack {
-                                    Image(systemName: "square.and.arrow.up")
-                                        .font(.title)
-                                    //.padding(.trailing, 10)
+                    HStack {
+                        Image(systemName: "square.and.arrow.up")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                            .onTapGesture {
+                                self.screenshot = takeScreenshot()
+                                self.isPresentingActivityViewController.toggle()
+                            }
+                            .sheet(isPresented: $isPresentingActivityViewController) {
+                                if let screenshot = self.screenshot {
+                                    ActivityViewController(activityItems: [screenshot])
                                 }
                             }
-                                .padding()
-                            //.position(x: UIScreen.main.bounds.width-20, y: 40)
-                        )
+                    }
                     Spacer()
                 }
-                Button("\nRecheck") {
+                Button("Recheck") {
                     if let userID = getUserID() {
                         getUserData(userID: userID) { userData in
                             if let goalStepCount = userData?["goalStepCount"] as? Int,
@@ -158,6 +179,7 @@ public struct HomeScreenView: View {
                 }
             }
             }.onAppear {
+                isDarkTheme = (colorScheme == .dark)
                 if let userID = getUserID() {
                     getUserData(userID: userID) { userData in
                         if let goalStepCount = userData?["goalStepCount"] as? Int,
@@ -317,8 +339,12 @@ public struct HomeScreenView: View {
         }
         
         let items: [Any] = [data]
-        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+        
+        // Delay presentation to ensure no conflicts with existing presentations
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+        }
     }
     func takeScreenshot() -> UIImage? {
         guard let window = UIApplication.shared.windows.first else {
@@ -634,10 +660,10 @@ struct SettingsView: View {
                     // Perform sign out logic
                     phoneViewModel.signout()
                     UserDefaults.standard.set("false", forKey: "goalSet")
-                    PhoneNumberView(phoneViewModel: phoneViewModel)
+                    PhoneNumberView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Sign Out")
+                    Text("Logout")
                         .foregroundColor(.red)
                 }
             }

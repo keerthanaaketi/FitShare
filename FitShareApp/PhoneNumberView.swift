@@ -8,20 +8,27 @@ struct PhoneNumberView: View {
     @State private var isNavigationActive = false
     @State private var isLoading = false
     @State private var errorMessage: String? // Added state for error message
-
+    @ObservedObject var goalModel : GoalModel
+    @ObservedObject var shareList: ShareList
+    @Environment(\.colorScheme) var colorScheme
+    @State private var isDarkTheme = true
     var body: some View {
+        let imageName = isDarkTheme ? "FitShareDark" : "FitShareLaunch"
+        NavigationView {
         VStack {
-            Text("FitShare")
-                .font(.title)
-                .padding(.bottom, 20)
-            
+            Spacer()
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.black) // Adjust the color of the logo as needed
+                .frame(width: 300, height: 300)
+                .clipShape(Circle())
             Text("Enter Your Phone Number")
                 .padding(.bottom, 20)
             HStack {
-                TextField("Country Code", text: $phoneViewModel.countryCodeNumber)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(width: 50)
+                CountryCodeTextField(text: $phoneViewModel.countryCodeNumber)
+                                   .textFieldStyle(RoundedBorderTextFieldStyle())
+                                   .frame(width: 100)
                 TextField("Phone Number", text: $phoneNumber)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -58,7 +65,7 @@ struct PhoneNumberView: View {
                     // Show loading indicator
                     ProgressView()
                 } else {
-                    Text("Signup")
+                    Text("Login")
                         .padding()
                         .background(phoneNumber.count >= 10 ? Color.blue : Color.gray)
                         .foregroundColor(.white)
@@ -66,9 +73,14 @@ struct PhoneNumberView: View {
                         .disabled(phoneNumber.count < 10)
                 }
             }
+            Spacer()
+            Spacer()
+        }
+        .onAppear(){
+            isDarkTheme = (colorScheme == .dark)
         }
         .padding()
-        .background(NavigationLink("", destination: OTPView(phoneViewModel: phoneViewModel), isActive: $isNavigationActive)
+        .background(NavigationLink("", destination: OTPView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList), isActive: $isNavigationActive)
             .opacity(0)
             .accessibility(hidden: true))
         .alert(isPresented: Binding<Bool>(
@@ -78,10 +90,50 @@ struct PhoneNumberView: View {
             Alert(title: Text("Error"), message: Text(errorMessage ?? ""), dismissButton: .default(Text("OK")))
         }
     }
+                }
+    struct CountryCodeTextField: View {
+        @Binding var text: String
+        
+        var body: some View {
+            TextField("", text: $text)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                //.overlay(
+                  //  RoundedRectangle(cornerRadius: 8)
+                    //    .stroke(Color.gray, lineWidth: 1)
+                //)
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
+                .textContentType(.telephoneNumber) // For keyboard suggestions
+                .modifier(CountryCodeFormatter(text: $text))
+        }
+    }
 
+    // Custom modifier to format country code input
+    struct CountryCodeFormatter: ViewModifier {
+        @Binding var text: String
+        
+        func body(content: Content) -> some View {
+            content
+                .onChange(of: text) { newValue in
+                    // Format country code input as needed here
+                    // For example, you can add the '+' character at the beginning if missing
+                    if !newValue.hasPrefix("+") {
+                        text = "+" + newValue
+                    }
+                }
+        }
+    }
     private func isValidPhoneNumber() -> Bool {
         let numericPhoneNumber = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         return numericPhoneNumber.count >= 10
+    }
+}
+
+struct PhoneNumberView_Previews: PreviewProvider {
+     static var previews: some View {
+         PhoneNumberView(phoneViewModel: PhoneViewModel(), goalModel: GoalModel(), shareList: ShareList())
     }
 }
 

@@ -7,8 +7,8 @@
 
 import Foundation
 class ShareList: ObservableObject{
-    @Published var showSteps: Bool = false
-    @Published var showNutrition: Bool = false
-    @Published var showSleep: Bool = false
-    @Published var showWorkout: Bool = false
+    @Published var showSteps: Bool = true
+    @Published var showNutrition: Bool = true
+    @Published var showSleep: Bool = true
+    @Published var showWorkout: Bool = true
 }
