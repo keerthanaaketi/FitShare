@@ -16,10 +16,15 @@ import FirebaseDatabaseSwift
 let healthStore = HKHealthStore()
 struct ActivityViewController: UIViewControllerRepresentable {
     var activityItems: [Any]
-    
+    var applicationActivities: [UIActivity]? = nil
+    let onDismiss: () -> Void
+
     func makeUIViewController(context: Context) -> UIActivityViewController {
-        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        return activityViewController
+        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
+        controller.completionWithItemsHandler = { _, _, _, _ in
+            self.onDismiss()
+        }
+        return controller
     }
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
@@ -52,6 +57,7 @@ public struct HomeScreenView: View {
     @State private var screenshot: UIImage? = nil
     @Environment(\.colorScheme) var colorScheme
     @State private var isDarkTheme = true
+    @State private var readyToPresentActivityView = false
     
     public var body: some View {
         let imageName = isDarkTheme ? "FitShareDark" : "FitShareLaunch"
@@ -79,16 +85,40 @@ public struct HomeScreenView: View {
                     Spacer()
                     Spacer()
                     HStack {
-                        Image(systemName: "square.and.arrow.up")
-                            .font(.title)
-                            .foregroundColor(.blue)
-                            .onTapGesture {
-                                self.screenshot = takeScreenshot()
-                                self.isPresentingActivityViewController = (self.screenshot != nil)
+                        Button(action: {
+                            ScreenshotManager.shared.capture { capturedImage in
+                                DispatchQueue.main.async {
+                                    self.screenshot = capturedImage
+                                    // Check if a screenshot was successfully captured before presenting
+                                    if capturedImage != nil {
+                                        self.readyToPresentActivityView = true
+                                    }
+                                }
                             }
-                            .sheet(isPresented: $isPresentingActivityViewController) {
-                                ActivityViewController(activityItems: [self.screenshot].compactMap { $0 })
+                        }) {
+                            Image(systemName: "square.and.arrow.up")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                        }
+                        .onChange(of: readyToPresentActivityView) { newValue in
+                            if newValue {
+                                // Ensure this logic is run on the main thread
+                                DispatchQueue.main.async {
+                                    self.isPresentingActivityViewController = true
+                                    // Reset the trigger to avoid unintended re-presentations
+                                    self.readyToPresentActivityView = false
+                                }
                             }
+                        }
+                        .sheet(isPresented: self.$isPresentingActivityViewController) {
+                            if let screenshotImage = self.screenshot {
+                                ActivityViewController(activityItems: [screenshotImage], onDismiss: {
+                                                    // This closure is called after the ActivityViewController is dismissed
+                                                    self.isPresentingActivityViewController = false
+                                                    self.screenshot = nil // Optionally reset other relevant state variables
+                                                })
+                                            }
+                        }
                     }
                     Spacer()
                 }
@@ -124,12 +154,12 @@ public struct HomeScreenView: View {
                 let remainingSteps = Int(stepGoalVal - stepCount)
                 if(shareList.showSteps){
                     SlabView(title: "STEPS",total: String(stepCount),goal: String(Int(stepGoalVal)), remaining: String(remainingSteps))
-                    if stepCount >= Int(stepGoalVal) {
+                    /*if stepCount >= Int(stepGoalVal) {
                         Text("Wohooo you did more than your goal steps")
                             .foregroundColor(.red) // You can adjust the color as needed
                             .font(.caption)
                             .padding(.bottom, 20)
-                    }
+                    }*/
                 }
                 if(shareList.showWorkout){
                     VStack {
@@ -221,9 +251,6 @@ public struct HomeScreenView: View {
                     fetchWorkoutsForToday()
                     fetchSleepData()
                     fetchNutritionData()
-                   DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // Adjust delay as needed
-                            self.screenshot = takeScreenshot()
-                    }
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
@@ -258,9 +285,16 @@ public struct HomeScreenView: View {
                             Text("Goal:"+goal)
                                 .font(.headline)
                             Spacer()
-                            Text("Left:"+remaining)
-                                .font(.headline)
-                            Spacer()
+                            if let remainingInt = Int(remaining), remainingInt > 0 {
+                                                        Text("Left: \(remaining)")
+                                                            .font(.headline)
+                                                    } else {
+                                                        Text("Goal Reached")
+                                                            .font(.headline)
+                                                            .foregroundColor(.green) // Optional: Change color to emphasize completion
+                                                    }
+                                                    
+                           Spacer()
                             
                         }
                     }
@@ -302,28 +336,55 @@ public struct HomeScreenView: View {
                             Text("Goal:"+goal)
                                 .font(.headline)
                             Spacer()
-                            Text("Left:"+remaining)
-                                .font(.headline)
-                            Spacer()
+                            if let remainingInt = Int(remaining), remainingInt > 0 {
+                                                        Text("Left: \(remaining)")
+                                                            .font(.headline)
+                                                    } else {
+                                                        Text("Goal Reached")
+                                                            .font(.headline)
+                                                            .foregroundColor(.green) // Optional: Change color to emphasize completion
+                                                    }
+                                                    
+                                                    Spacer()
                             
                         }
                         Text("\n")
-                        VStack{
-                            HStack{
+                        VStack {
+                            HStack {
                                 Text("Protein").font(.headline).bold()
-                                Text("total:\(protein) goal:\(proteinGoal) left:\(proteinGoal-protein)").font(.title3)
+                                if proteinGoal - protein > 0 {
+                                    Text("total: \(protein) goal: \(proteinGoal) left: \(proteinGoal - protein)").font(.headline)
+                                } else if proteinGoal > 0 {
+                                    Text("total: \(protein) goal: \(proteinGoal) Goal reached").font(.headline).foregroundColor(.green)
+                                }
+                                else{
+                                    Text("total: \(protein) goal: \(proteinGoal)").font(.headline)
+                                }
+                            
                             }
-                            HStack{
+                            HStack {
                                 Text("Fat").font(.headline).bold()
-                                Text("total:\(fat) goal:\(fatGoal) left:\(fatGoal-fat)")
-                                    .font(.title3)
+                                if fatGoal - fat > 0 {
+                                    Text("total: \(fat) goal: \(fatGoal) left: \(fatGoal - fat)").font(.headline)
+                                } else if fatGoal > 0{
+                                    Text("total: \(fat) goal: \(fatGoal) Goal reached").font(.headline).foregroundColor(.green)
+                                }else{
+                                    Text("total: \(fat) goal: \(fatGoal)").font(.headline)
+                                }
                             }
-                            HStack{
+                            HStack {
                                 Text("Carbs").font(.headline).bold()
-                                Text("total:\(carbs) goal:\(carbsGoal) left:\(carbsGoal-carbs)")
-                                    .font(.title3)
+                                if carbsGoal - carbs > 0 {
+                                    Text("total: \(carbs) goal: \(carbsGoal) left: \(carbsGoal - carbs)").font(.headline)
+                                } else if carbsGoal > 0 {
+                                    Text("total: \(carbs) goal: \(carbsGoal)  Goal reached").font(.headline).foregroundColor(.green)
+                                }
+                                else{
+                                    Text("total: \(carbs) goal: \(carbsGoal)").font(.headline)
+                                }
                             }
                         }
+
                         Spacer()
                     }
                     )
@@ -360,11 +421,10 @@ public struct HomeScreenView: View {
     func takeScreenshot() -> UIImage? {
         guard let window = UIApplication.shared.windows.first else { return nil }
         UIGraphicsBeginImageContextWithOptions(window.frame.size, false, 0.0)
-        window.drawHierarchy(in: window.frame, afterScreenUpdates: true)
-        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        window.drawHierarchy(in: window.frame, afterScreenUpdates: false)
+        let screenshotObj = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.screenshot = screenshot
-        return screenshot
+        return screenshotObj
     }
 
     func getUserData(userID: String, completion: @escaping ([String: Any]?) -> Void) {
@@ -382,6 +442,7 @@ public struct HomeScreenView: View {
             completion(userData)
         }
     }
+
     func getUserID() -> String? {
         if let user = Auth.auth().currentUser {
             return user.uid

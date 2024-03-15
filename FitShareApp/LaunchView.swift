@@ -22,7 +22,9 @@ public struct LaunchView: View {
                     .frame(width: 300, height: 300)
                     .clipShape(Circle())
                 Spacer()
-                
+                Text("Welcome")
+                    .padding(.bottom, 20)
+                Spacer()
                 // Loading dots around the logo
                 HStack(spacing: 10) {
                     ForEach(0..<3) { index in

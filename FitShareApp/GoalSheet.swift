@@ -219,36 +219,28 @@ public struct GoalSheet: View {
     func createUserNode(userID: String, goalStepCount: Int, goalNutrition: Int, goalProtein: Int, goalFat:Int, goalCarbs: Int, goalWorkouts: Int, goalSleep: Int) {
         let ref = Database.database().reference().child("users").child(userID)
 
-        // Check if the user node already exists
-        ref.observeSingleEvent(of: .value) { snapshot in
-            if snapshot.exists() {
-                // User node exists, update stepCount and goalStepCount
-                ref.updateChildValues(["goalStepCount": goalStepCount])
-                ref.updateChildValues(["goalNutrition": goalNutrition])
-                ref.updateChildValues(["goalProtein": goalProtein])
-                ref.updateChildValues(["goalFat": goalFat])
-                ref.updateChildValues(["goalCarbs": goalCarbs])
-                ref.updateChildValues(["goalWorkouts": goalWorkouts])
-                ref.updateChildValues(["goalSleep": goalSleep])
-                ref.updateChildValues(["showStep":shareList.showSteps])
-                ref.updateChildValues(["showNutrition":shareList.showNutrition])
-                ref.updateChildValues(["showWorkout":shareList.showWorkout])
-                ref.updateChildValues(["showSleep":shareList.showSleep])
-            } else {
-                // User node does not exist, create it with initial data
-                ref.setValue(["goalStepCount": goalStepCount])
-                ref.setValue(["goalNutrition": goalNutrition])
-                ref.setValue(["goalProtein": goalProtein])
-                ref.setValue(["goalFat": goalFat])
-                ref.setValue(["goalCarbs": goalCarbs])
-                ref.setValue(["goalWorkouts": goalWorkouts])
-                ref.setValue(["goalSleep": goalSleep])
-                ref.setValue(["showStep":shareList.showSteps])
-                ref.setValue(["showNutrition":shareList.showNutrition])
-                ref.setValue(["showWorkout":shareList.showWorkout])
-                ref.setValue(["showSleep":shareList.showSleep])
+        let userData: [String: Any] = [
+                "goalStepCount": goalStepCount,
+                "goalNutrition": goalNutrition,
+                "goalProtein": goalProtein,
+                "goalFat": goalFat,
+                "goalCarbs": goalCarbs,
+                "goalWorkouts": goalWorkouts,
+                "goalSleep": goalSleep,
+                "showStep": shareList.showSteps,
+                "showNutrition": shareList.showNutrition,
+                "showWorkout": shareList.showWorkout,
+                "showSleep": shareList.showSleep
+            ]
+              ref.observeSingleEvent(of: .value) { snapshot in
+                if snapshot.exists() {
+                    // User node exists, update the user data
+                    ref.updateChildValues(userData)
+                } else {
+                    // User node does not exist, create it with the initial data
+                    ref.setValue(userData)
+                }
             }
-        }
     }
 }
 
