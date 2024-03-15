@@ -1991,8 +1991,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "568"
-            endingLineNumber = "568"
+            startingLineNumber = "567"
+            endingLineNumber = "567"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2007,8 +2007,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "563"
-            endingLineNumber = "563"
+            startingLineNumber = "562"
+            endingLineNumber = "562"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2023,8 +2023,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "573"
-            endingLineNumber = "573"
+            startingLineNumber = "572"
+            endingLineNumber = "572"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2039,8 +2039,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "523"
-            endingLineNumber = "523"
+            startingLineNumber = "522"
+            endingLineNumber = "522"
             landmarkName = "refreshStepCount()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2055,8 +2055,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "574"
-            endingLineNumber = "574"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3703,8 +3703,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "takeScreenshot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3719,8 +3719,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
             landmarkName = "takeScreenshot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3735,8 +3735,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "365"
+            endingLineNumber = "365"
             landmarkName = "takeScreenshot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3751,8 +3751,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
             landmarkName = "takeScreenshot()"
             landmarkType = "7">
          </BreakpointContent>

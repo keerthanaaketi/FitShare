@@ -221,9 +221,8 @@ public struct HomeScreenView: View {
                     fetchWorkoutsForToday()
                     fetchSleepData()
                     fetchNutritionData()
-                   DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Adjust delay as needed
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // Adjust delay as needed
                             self.screenshot = takeScreenshot()
-                            UserDefaults.standard.set(true, forKey: "hasLoadedScreenshot")
                     }
             }
             .sheet(isPresented: $showSettings) {
