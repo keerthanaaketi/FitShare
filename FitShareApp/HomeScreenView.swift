@@ -25,6 +25,16 @@ struct ActivityViewController: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
 
+struct ActivityIndicatorView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }
+
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {}
+}
+
 public struct HomeScreenView: View {
     let healthStore = HKHealthStore()
     @State private var stepCount: Int = 0
@@ -74,12 +84,10 @@ public struct HomeScreenView: View {
                             .foregroundColor(.blue)
                             .onTapGesture {
                                 self.screenshot = takeScreenshot()
-                                self.isPresentingActivityViewController.toggle()
+                                self.isPresentingActivityViewController = (self.screenshot != nil)
                             }
                             .sheet(isPresented: $isPresentingActivityViewController) {
-                                if let screenshot = self.screenshot {
-                                    ActivityViewController(activityItems: [screenshot])
-                                }
+                                ActivityViewController(activityItems: [self.screenshot].compactMap { $0 })
                             }
                     }
                     Spacer()
@@ -213,6 +221,10 @@ public struct HomeScreenView: View {
                     fetchWorkoutsForToday()
                     fetchSleepData()
                     fetchNutritionData()
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Adjust delay as needed
+                            self.screenshot = takeScreenshot()
+                            UserDefaults.standard.set(true, forKey: "hasLoadedScreenshot")
+                    }
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
@@ -347,16 +359,15 @@ public struct HomeScreenView: View {
         }
     }
     func takeScreenshot() -> UIImage? {
-        guard let window = UIApplication.shared.windows.first else {
-            return nil
-        }
-        
+        guard let window = UIApplication.shared.windows.first else { return nil }
         UIGraphicsBeginImageContextWithOptions(window.frame.size, false, 0.0)
         window.drawHierarchy(in: window.frame, afterScreenUpdates: true)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        self.screenshot = screenshot
         return screenshot
     }
+
     func getUserData(userID: String, completion: @escaping ([String: Any]?) -> Void) {
         let databaseReference = Database.database().reference()
         let userReference = databaseReference.child("users").child(userID)

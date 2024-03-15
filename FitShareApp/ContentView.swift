@@ -20,10 +20,10 @@ struct ContentView: View {
             VStack {
                 if Auth.auth().currentUser != nil {
                     //if let savedValue = UserDefaults.standard.string(forKey: "goalSet"), savedValue == "true"{
-                        LogoView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
-                   // }
+                    HomeScreenView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
+                    //}
                     //else{
-                      //  GoalSheet(goalModel: goalModel, phoneViewModel: phoneViewModel, shareList: ShareList())
+                      // GoalSheet(goalModel: goalModel, phoneViewModel: phoneViewModel, shareList: ShareList())
                     //}
                 }
                 else{

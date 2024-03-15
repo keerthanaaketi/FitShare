@@ -1991,8 +1991,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "557"
-            endingLineNumber = "557"
+            startingLineNumber = "568"
+            endingLineNumber = "568"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2007,8 +2007,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "552"
-            endingLineNumber = "552"
+            startingLineNumber = "563"
+            endingLineNumber = "563"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2023,8 +2023,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "562"
-            endingLineNumber = "562"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2039,8 +2039,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
+            startingLineNumber = "523"
+            endingLineNumber = "523"
             landmarkName = "refreshStepCount()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2055,8 +2055,8 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "563"
-            endingLineNumber = "563"
+            startingLineNumber = "574"
+            endingLineNumber = "574"
             landmarkName = "fetchWorkoutsForToday()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2241,6 +2241,66 @@
                   startingLineNumber = "69"
                   endingLineNumber = "69"
                   offsetFromSymbolStart = "2012">
+               </Location>
+               <Location
+                  uuid = "D86C13BC-B5B1-441B-981C-7C45D10E4A0F - 8851903f0a36e188"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "2568">
+               </Location>
+               <Location
+                  uuid = "D86C13BC-B5B1-441B-981C-7C45D10E4A0F - 8851903f0a36e188"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "2704">
+               </Location>
+               <Location
+                  uuid = "D86C13BC-B5B1-441B-981C-7C45D10E4A0F - 8851903f0a36e188"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "2896">
+               </Location>
+               <Location
+                  uuid = "D86C13BC-B5B1-441B-981C-7C45D10E4A0F - 8851903f0a36e188"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "3032">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2569,6 +2629,36 @@
                   endingLineNumber = "84"
                   offsetFromSymbolStart = "3364">
                </Location>
+               <Location
+                  uuid = "606AC4B8-621F-4CE5-A65D-FBEBEFF8519D - 8851903f0a36ef9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "4564">
+               </Location>
+               <Location
+                  uuid = "606AC4B8-621F-4CE5-A65D-FBEBEFF8519D - 8851903f0a36ef9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "4892">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2662,6 +2752,36 @@
                   endingLineNumber = "83"
                   offsetFromSymbolStart = "3296">
                </Location>
+               <Location
+                  uuid = "10472F7F-8790-4FED-87DD-FF5418B03CD9 - 8851903f0a36e07a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "4484">
+               </Location>
+               <Location
+                  uuid = "10472F7F-8790-4FED-87DD-FF5418B03CD9 - 8851903f0a36e07a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.TupleView&lt;(FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow2, FitShareApp.GoalSheet.HStackRow, FitShareApp.GoalSheet.HStackRow)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;, SwiftUI.ProgressView&lt;SwiftUI.Text, SwiftUI.EmptyView&gt;&gt;&gt;)&gt; in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "4812">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2675,13 +2795,13 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "D1CA52D4-08FE-471A-A96F-5D0F6ECA24C9 - 2d6575171db55bf6"
+                  uuid = "D1CA52D4-08FE-471A-A96F-5D0F6ECA24C9 - 2d6575171db55cde"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2691,24 +2811,54 @@
                   urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "1280">
+                  startingLineNumber = "197"
+                  endingLineNumber = "197"
+                  offsetFromSymbolStart = "3172">
                </Location>
                <Location
-                  uuid = "D1CA52D4-08FE-471A-A96F-5D0F6ECA24C9 - f62f94cc8ffa0d25"
+                  uuid = "D1CA52D4-08FE-471A-A96F-5D0F6ECA24C9 - 2d6575171db55e8c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ScrollView&lt;&lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt; in FitShareApp.HomeScreenView.body.getter : some"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in FitShareApp.HomeScreenView.body.getter : some"
                   moduleName = "FitShareApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "2008">
+                  startingLineNumber = "211"
+                  endingLineNumber = "211"
+                  offsetFromSymbolStart = "2100">
+               </Location>
+               <Location
+                  uuid = "D1CA52D4-08FE-471A-A96F-5D0F6ECA24C9 - 2d6575171db55e4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in FitShareApp.HomeScreenView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "2100">
+               </Location>
+               <Location
+                  uuid = "D1CA52D4-08FE-471A-A96F-5D0F6ECA24C9 - 2d6575171db55f94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in FitShareApp.HomeScreenView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "2100">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2723,13 +2873,13 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "AD32AA2D-559F-40B5-817D-D48932FE8031 - 2d6575171db55d62"
+                  uuid = "AD32AA2D-559F-40B5-817D-D48932FE8031 - 2d6575171db55e4a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2739,24 +2889,54 @@
                   urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "185"
-                  endingLineNumber = "185"
-                  offsetFromSymbolStart = "4308">
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "4848">
                </Location>
                <Location
-                  uuid = "AD32AA2D-559F-40B5-817D-D48932FE8031 - f62f94cc8ffa0bb1"
+                  uuid = "AD32AA2D-559F-40B5-817D-D48932FE8031 - 2d6575171db56078"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ScrollView&lt;&lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt; in FitShareApp.HomeScreenView.body.getter : some"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in FitShareApp.HomeScreenView.body.getter : some"
                   moduleName = "FitShareApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "185"
-                  endingLineNumber = "185"
-                  offsetFromSymbolStart = "4428">
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "4624">
+               </Location>
+               <Location
+                  uuid = "AD32AA2D-559F-40B5-817D-D48932FE8031 - 2d6575171db561c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in FitShareApp.HomeScreenView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "4624">
+               </Location>
+               <Location
+                  uuid = "AD32AA2D-559F-40B5-817D-D48932FE8031 - 2d6575171db56100"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in FitShareApp.HomeScreenView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "4624">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2771,28 +2951,28 @@
             filePath = "FitShareApp/HomeScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "C631FC66-57A3-4DF7-936C-E860B3BA31D2 - 3c76c441df974d5e"
+                  uuid = "C631FC66-57A3-4DF7-936C-E860B3BA31D2 - e9a0cd61e81e665"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, Swift.Optional&lt;SwiftUI.TupleView&lt;(FitShareApp.HomeScreenView.SlabView, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Text)&gt;, SwiftUI.TupleView&lt;(FitShareApp.HomeScreenView.SlabView, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.VStack&lt;FitShareApp.HomeScreenView.NutritionSlabView&gt;&gt;, Swift.Optional&lt;SwiftUI._ConditionalContent&lt;FitShareApp.HomeScreenView.SlabView, SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Text)&gt;&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in FitShareApp.HomeScreenView.body.getter : some"
+                  symbolName = "closure #1 (Swift.Int, __C.HKWorkout) -&gt; Swift.Int in totalCaloriesBurnt.getter : Swift.Int"
                   moduleName = "FitShareApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "5808">
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "252">
                </Location>
                <Location
-                  uuid = "C631FC66-57A3-4DF7-936C-E860B3BA31D2 - d787b385827bba4f"
+                  uuid = "C631FC66-57A3-4DF7-936C-E860B3BA31D2 - d787b385827bbf0a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2802,9 +2982,39 @@
                   urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "44">
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "C631FC66-57A3-4DF7-936C-E860B3BA31D2 - d787b385827bbfc8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "totalCaloriesBurnt.getter : Swift.Int"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "C631FC66-57A3-4DF7-936C-E860B3BA31D2 - d787b385827bbe33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "totalCaloriesBurnt.getter : Swift.Int"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "120">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2932,6 +3142,36 @@
                   endingLineNumber = "23"
                   offsetFromSymbolStart = "364">
                </Location>
+               <Location
+                  uuid = "6A7D07C9-DAC3-40F3-8008-5FE6710802CA - c70f4966c8b03f58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;FitShareApp.LogoView, FitShareApp.PhoneNumberView&gt; in FitShareApp.ContentView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "632">
+               </Location>
+               <Location
+                  uuid = "6A7D07C9-DAC3-40F3-8008-5FE6710802CA - c70f4966c8b03f58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;FitShareApp.LogoView, FitShareApp.PhoneNumberView&gt; in FitShareApp.ContentView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "848">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2995,6 +3235,36 @@
                   endingLineNumber = "32"
                   offsetFromSymbolStart = "2316">
                </Location>
+               <Location
+                  uuid = "D5838055-2F52-4CBF-8447-5956E213F74A - c70f4966c8b03e21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;FitShareApp.LogoView, FitShareApp.PhoneNumberView&gt; in FitShareApp.ContentView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1060">
+               </Location>
+               <Location
+                  uuid = "D5838055-2F52-4CBF-8447-5956E213F74A - c70f4966c8b03e21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;FitShareApp.LogoView, FitShareApp.PhoneNumberView&gt; in FitShareApp.ContentView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1340">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3057,6 +3327,36 @@
                   startingLineNumber = "30"
                   endingLineNumber = "30"
                   offsetFromSymbolStart = "1444">
+               </Location>
+               <Location
+                  uuid = "5DB644D4-7067-4F25-B612-8A99F2CFA4DF - c70f4966c8b03e7f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;FitShareApp.LogoView, FitShareApp.PhoneNumberView&gt; in FitShareApp.ContentView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "840">
+               </Location>
+               <Location
+                  uuid = "5DB644D4-7067-4F25-B612-8A99F2CFA4DF - c70f4966c8b03e7f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;FitShareApp.LogoView, FitShareApp.PhoneNumberView&gt; in FitShareApp.ContentView.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1096">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3186,6 +3486,36 @@
                   endingLineNumber = "106"
                   offsetFromSymbolStart = "136">
                </Location>
+               <Location
+                  uuid = "90FF0CC8-203A-4A4E-B756-84949990517F - 109cdd4b4329df51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+               <Location
+                  uuid = "90FF0CC8-203A-4A4E-B756-84949990517F - 776662c615b1d447"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in FitShareApp.GoalSheet.body.getter : some"
+                  moduleName = "FitShareApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "116">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3234,101 +3564,35 @@
                   endingLineNumber = "108"
                   offsetFromSymbolStart = "244">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "59E6A041-F9C2-46B0-BFD1-99D2BB9AF1F1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FitShareApp/HomeScreenView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
-            landmarkName = "takeScreenshot()"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "59E6A041-F9C2-46B0-BFD1-99D2BB9AF1F1 - b226068fe795749d"
+                  uuid = "99F9FB11-AB2A-4F93-952B-224F8C9C95BB - 776662c615b1d5b9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FitShareApp.HomeScreenView.takeScreenshot() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
+                  symbolName = "closure #3 () -&gt; () in FitShareApp.GoalSheet.body.getter : some"
                   moduleName = "FitShareApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "338"
-                  endingLineNumber = "338"
-                  offsetFromSymbolStart = "676">
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "128">
                </Location>
                <Location
-                  uuid = "59E6A041-F9C2-46B0-BFD1-99D2BB9AF1F1 - b226068fe795749d"
+                  uuid = "99F9FB11-AB2A-4F93-952B-224F8C9C95BB - 776662c615b1d5b9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FitShareApp.HomeScreenView.takeScreenshot() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
+                  symbolName = "closure #3 () -&gt; () in FitShareApp.GoalSheet.body.getter : some"
                   moduleName = "FitShareApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
+                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/GoalSheet.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "338"
-                  endingLineNumber = "338"
-                  offsetFromSymbolStart = "568">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "39FFBA2D-2683-4F78-9E3C-77ABC30BA586"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FitShareApp/HomeScreenView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
-            landmarkName = "takeScreenshot()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "39FFBA2D-2683-4F78-9E3C-77ABC30BA586 - b226068fe79574fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FitShareApp.HomeScreenView.takeScreenshot() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FitShareApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "341"
-                  endingLineNumber = "341"
-                  offsetFromSymbolStart = "304">
-               </Location>
-               <Location
-                  uuid = "39FFBA2D-2683-4F78-9E3C-77ABC30BA586 - b226068fe79574df"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FitShareApp.HomeScreenView.takeScreenshot() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FitShareApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/k0v0354/Documents/WeightXCode/FitShareApp/FitShareApp/HomeScreenView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "340"
-                  endingLineNumber = "340"
-                  offsetFromSymbolStart = "596">
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "224">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3337,7 +3601,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "71F06A66-DD77-4A8B-AD6C-4B9674ABF32D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FitShareApp/LaunchView.swift"
@@ -3347,6 +3611,150 @@
             endingLineNumber = "12"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "832B7677-26D0-41C8-9C26-A0F836DA800E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ActivityViewController"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DB7BB1C-5EFB-48BF-AED1-B861D0273FDB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "makeUIViewController(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21C39B74-48C3-4148-B5CC-71171991749D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "makeUIViewController(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DA27596-6191-4D8F-88BB-FFB716548DB7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "ActivityViewController"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7FE10B0-1077-4FE2-AD73-ADE61E935B2B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "ActivityViewController"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA42435F-D0D8-4CB7-BD46-9EBF40B54419"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "takeScreenshot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9FB0668-D6C8-49C6-92E1-C1014D5989C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
+            landmarkName = "takeScreenshot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A06B93D8-7580-48AD-80E8-2C63CB175475"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
+            landmarkName = "takeScreenshot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB2FCF31-F43E-4CB2-938B-F5198D31123C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitShareApp/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
+            landmarkName = "takeScreenshot()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
