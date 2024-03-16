@@ -179,7 +179,10 @@ public struct HomeScreenView: View {
                             }
                             Text("No workouts today")
                         } else {
-                            SlabView(title: "WORKOUTS",total: "\(totalCaloriesBurnt) cals",goal: goalModel.workoutsGoal, remaining: String(Int(goalModel.workoutsGoal)!-totalCaloriesBurnt))
+                            SlabView(title: "WORKOUTS",
+                                     total: "\(totalCaloriesBurnt) cals",
+                                     goal: goalModel.workoutsGoal ?? "0",
+                                     remaining: String((Int(goalModel.workoutsGoal ?? "0") ?? 0) - totalCaloriesBurnt) )
                             NavigationView {
                                 List(workouts, id: \.workoutActivityType) { workout in
                                     VStack(alignment: .leading) {
