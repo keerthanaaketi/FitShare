@@ -12,6 +12,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseDatabaseSwift
+import FirebaseAnalytics
 
 let healthStore = HKHealthStore()
 struct ActivityViewController: UIViewControllerRepresentable {
@@ -28,16 +29,6 @@ struct ActivityViewController: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
-}
-
-struct ActivityIndicatorView: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.startAnimating()
-        return activityIndicator
-    }
-
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {}
 }
 
 public struct HomeScreenView: View {
@@ -86,6 +77,10 @@ public struct HomeScreenView: View {
                     Spacer()
                     HStack {
                         Button(action: {
+                            Analytics.logEvent("screenshot_capture_initiated", parameters: [
+                                            "description": "User initiated screenshot capture" as NSObject
+                                        ])
+                            
                             ScreenshotManager.shared.capture { capturedImage in
                                 DispatchQueue.main.async {
                                     self.screenshot = capturedImage
