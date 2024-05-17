@@ -41,7 +41,7 @@ public struct GoalSheet: View {
                     HStackRow2(title: "Protein", textValue: $goalModel.proteinGoal, textField: "gms")
                     HStackRow2(title: "Fat", textValue: $goalModel.fatsGoal, textField: "gms")
                     HStackRow2(title: "Carbohydrates", textValue: $goalModel.carbsGoal, textField: "gms")
-                    HStackRow(title: "Workouts", textValue: $goalModel.workoutsGoal, toggleValue: $shareList.showWorkout, textField: "KCals")
+                    HStackRow(title: "Workouts", textValue: $goalModel.workoutsGoal, toggleValue: $shareList.showWorkout, textField: "mins")
                     HStackRow(title: "Sleep", textValue: $goalModel.sleepGoal, toggleValue: $shareList.showSleep, textField: "Hours")
                 }
                 Button("Set Goal") {

@@ -22,6 +22,15 @@
 		72658A662B0290A7004C7707 /* ShareList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72658A652B0290A7004C7707 /* ShareList.swift */; };
 		7278CDD82AA79AD900263C74 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD72AA79AD900263C74 /* HomeScreenView.swift */; };
 		7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278CDD92AA7A48100263C74 /* OTPView.swift */; };
+		729DB0812BF7CCB300962C4C /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB0802BF7CCB300962C4C /* StepView.swift */; };
+		729DB0832BF7CCEC00962C4C /* SlabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB0822BF7CCEC00962C4C /* SlabView.swift */; };
+		729DB0852BF7CEB100962C4C /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB0842BF7CEB100962C4C /* WorkoutView.swift */; };
+		729DB0872BF7CECA00962C4C /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB0862BF7CECA00962C4C /* NutritionView.swift */; };
+		729DB0892BF7CEE200962C4C /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB0882BF7CEE200962C4C /* SleepView.swift */; };
+		729DB08B2BF7CF1B00962C4C /* NutritionSlabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB08A2BF7CF1B00962C4C /* NutritionSlabView.swift */; };
+		729DB08D2BF7D46000962C4C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB08C2BF7D46000962C4C /* SettingsView.swift */; };
+		729DB08F2BF7DA6700962C4C /* CustomProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB08E2BF7DA6700962C4C /* CustomProgressViewStyle.swift */; };
+		729DB0912BF7ECB200962C4C /* AdaptiveText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DB0902BF7ECB200962C4C /* AdaptiveText.swift */; };
 		72B125A42AADBA690001523B /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B125A32AADBA690001523B /* AuthModel.swift */; };
 		72B125AB2AAE47500001523B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125AA2AAE47500001523B /* FirebaseAuth */; };
 		72B125AD2AAE47500001523B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125AC2AAE47500001523B /* FirebaseMessaging */; };
@@ -72,6 +81,15 @@
 		72658A652B0290A7004C7707 /* ShareList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareList.swift; sourceTree = "<group>"; };
 		7278CDD72AA79AD900263C74 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		7278CDD92AA7A48100263C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		729DB0802BF7CCB300962C4C /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
+		729DB0822BF7CCEC00962C4C /* SlabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlabView.swift; sourceTree = "<group>"; };
+		729DB0842BF7CEB100962C4C /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		729DB0862BF7CECA00962C4C /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
+		729DB0882BF7CEE200962C4C /* SleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
+		729DB08A2BF7CF1B00962C4C /* NutritionSlabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSlabView.swift; sourceTree = "<group>"; };
+		729DB08C2BF7D46000962C4C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		729DB08E2BF7DA6700962C4C /* CustomProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressViewStyle.swift; sourceTree = "<group>"; };
+		729DB0902BF7ECB200962C4C /* AdaptiveText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveText.swift; sourceTree = "<group>"; };
 		72B125A32AADBA690001523B /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		72B6399C2A8BD3380005294D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		72CF2A8D2AA492E6009BF195 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
@@ -153,6 +171,8 @@
 				72B6399C2A8BD3380005294D /* Info.plist */,
 				72F31B802AB6099000B4249F /* CountryCodes.json */,
 				726002FF2AF296F100B12E7C /* FitShareApp.swift */,
+				729DB08E2BF7DA6700962C4C /* CustomProgressViewStyle.swift */,
+				729DB0902BF7ECB200962C4C /* AdaptiveText.swift */,
 				7216C4C82B75440900BBF4AC /* LogoView.swift */,
 				7216C4CA2B77E06B00BBF4AC /* LaunchView.swift */,
 				72EAE0042A88F77C001998B5 /* ContentView.swift */,
@@ -160,7 +180,14 @@
 				7278CDD92AA7A48100263C74 /* OTPView.swift */,
 				72658A5D2B015455004C7707 /* GoalSheet.swift */,
 				7278CDD72AA79AD900263C74 /* HomeScreenView.swift */,
+				729DB08C2BF7D46000962C4C /* SettingsView.swift */,
+				729DB0802BF7CCB300962C4C /* StepView.swift */,
+				729DB0842BF7CEB100962C4C /* WorkoutView.swift */,
+				729DB0862BF7CECA00962C4C /* NutritionView.swift */,
+				729DB0882BF7CEE200962C4C /* SleepView.swift */,
 				72B125A32AADBA690001523B /* AuthModel.swift */,
+				729DB0822BF7CCEC00962C4C /* SlabView.swift */,
+				729DB08A2BF7CF1B00962C4C /* NutritionSlabView.swift */,
 				72CF2A8D2AA492E6009BF195 /* Nutrition.swift */,
 				72EAE0062A88F77F001998B5 /* Assets.xcassets */,
 				72EAE0092A88F77F001998B5 /* Preview Content */,
@@ -353,8 +380,11 @@
 				726003002AF296F100B12E7C /* FitShareApp.swift in Sources */,
 				72F31B762AB5FA3600B4249F /* CustomUserDefaults.swift in Sources */,
 				72EAE0052A88F77C001998B5 /* ContentView.swift in Sources */,
+				729DB0812BF7CCB300962C4C /* StepView.swift in Sources */,
+				729DB0912BF7ECB200962C4C /* AdaptiveText.swift in Sources */,
 				72F31B6E2AB4BF9200B4249F /* Utils.swift in Sources */,
 				7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */,
+				729DB08F2BF7DA6700962C4C /* CustomProgressViewStyle.swift in Sources */,
 				7216C4CB2B77E06B00BBF4AC /* LaunchView.swift in Sources */,
 				72F31B722AB4C16100B4249F /* AuthenticationService.swift in Sources */,
 				72F31B702AB4C04200B4249F /* CountryModel.swift in Sources */,
@@ -365,8 +395,14 @@
 				72F31B742AB4C19500B4249F /* FirebaseError.swift in Sources */,
 				72658A662B0290A7004C7707 /* ShareList.swift in Sources */,
 				72F31B782AB5FA5400B4249F /* Constants.swift in Sources */,
+				729DB0852BF7CEB100962C4C /* WorkoutView.swift in Sources */,
 				72CF2A8E2AA492E6009BF195 /* Nutrition.swift in Sources */,
 				72658A642B015C23004C7707 /* GoalModel.swift in Sources */,
+				729DB08D2BF7D46000962C4C /* SettingsView.swift in Sources */,
+				729DB08B2BF7CF1B00962C4C /* NutritionSlabView.swift in Sources */,
+				729DB0872BF7CECA00962C4C /* NutritionView.swift in Sources */,
+				729DB0832BF7CCEC00962C4C /* SlabView.swift in Sources */,
+				729DB0892BF7CEE200962C4C /* SleepView.swift in Sources */,
 				72B125A42AADBA690001523B /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
