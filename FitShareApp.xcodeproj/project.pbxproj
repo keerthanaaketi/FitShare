@@ -35,6 +35,13 @@
 		72B125AB2AAE47500001523B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125AA2AAE47500001523B /* FirebaseAuth */; };
 		72B125AD2AAE47500001523B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125AC2AAE47500001523B /* FirebaseMessaging */; };
 		72B125B42AAEC9860001523B /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72B125B32AAEC9860001523B /* PromiseKit */; };
+		72B74E172BF89788002AFDA3 /* WeightEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B74E162BF89788002AFDA3 /* WeightEntryView.swift */; };
+		72B74E1B2BF9EA9C002AFDA3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 72B74E1A2BF9EA9C002AFDA3 /* FirebaseStorage */; };
+		72B74E1D2BF9EE41002AFDA3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B74E1C2BF9EE41002AFDA3 /* ImagePicker.swift */; };
+		72B74E1F2BFA1543002AFDA3 /* SwipeToDeleteModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B74E1E2BFA1543002AFDA3 /* SwipeToDeleteModifier.swift */; };
+		72B74E212BFA1741002AFDA3 /* DraggableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B74E202BFA1741002AFDA3 /* DraggableModifier.swift */; };
+		72B74E232BFA186B002AFDA3 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B74E222BFA186B002AFDA3 /* RefreshControl.swift */; };
+		72B74E252BFB7A54002AFDA3 /* DraggableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B74E242BFB7A54002AFDA3 /* DraggableCircle.swift */; };
 		72CF2A8E2AA492E6009BF195 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF2A8D2AA492E6009BF195 /* Nutrition.swift */; };
 		72EAE0052A88F77C001998B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAE0042A88F77C001998B5 /* ContentView.swift */; };
 		72EAE0072A88F77F001998B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72EAE0062A88F77F001998B5 /* Assets.xcassets */; };
@@ -92,6 +99,12 @@
 		729DB0902BF7ECB200962C4C /* AdaptiveText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveText.swift; sourceTree = "<group>"; };
 		72B125A32AADBA690001523B /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		72B6399C2A8BD3380005294D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		72B74E162BF89788002AFDA3 /* WeightEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntryView.swift; sourceTree = "<group>"; };
+		72B74E1C2BF9EE41002AFDA3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		72B74E1E2BFA1543002AFDA3 /* SwipeToDeleteModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDeleteModifier.swift; sourceTree = "<group>"; };
+		72B74E202BFA1741002AFDA3 /* DraggableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableModifier.swift; sourceTree = "<group>"; };
+		72B74E222BFA186B002AFDA3 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		72B74E242BFB7A54002AFDA3 /* DraggableCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCircle.swift; sourceTree = "<group>"; };
 		72CF2A8D2AA492E6009BF195 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
 		72EADFFF2A88F77C001998B5 /* FitShareApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitShareApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EAE0042A88F77C001998B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +135,7 @@
 				720AAE492BA8A5290024F802 /* FirebaseAnalytics in Frameworks */,
 				72B125B42AAEC9860001523B /* PromiseKit in Frameworks */,
 				720AAE4B2BA8A5290024F802 /* FirebaseAnalyticsSwift in Frameworks */,
+				72B74E1B2BF9EA9C002AFDA3 /* FirebaseStorage in Frameworks */,
 				72658A602B015A6C004C7707 /* FirebaseDatabase in Frameworks */,
 				72B125AB2AAE47500001523B /* FirebaseAuth in Frameworks */,
 			);
@@ -172,6 +186,11 @@
 				72F31B802AB6099000B4249F /* CountryCodes.json */,
 				726002FF2AF296F100B12E7C /* FitShareApp.swift */,
 				729DB08E2BF7DA6700962C4C /* CustomProgressViewStyle.swift */,
+				72B74E222BFA186B002AFDA3 /* RefreshControl.swift */,
+				72B74E202BFA1741002AFDA3 /* DraggableModifier.swift */,
+				72B74E242BFB7A54002AFDA3 /* DraggableCircle.swift */,
+				72B74E1E2BFA1543002AFDA3 /* SwipeToDeleteModifier.swift */,
+				72B74E1C2BF9EE41002AFDA3 /* ImagePicker.swift */,
 				729DB0902BF7ECB200962C4C /* AdaptiveText.swift */,
 				7216C4C82B75440900BBF4AC /* LogoView.swift */,
 				7216C4CA2B77E06B00BBF4AC /* LaunchView.swift */,
@@ -183,6 +202,7 @@
 				729DB08C2BF7D46000962C4C /* SettingsView.swift */,
 				729DB0802BF7CCB300962C4C /* StepView.swift */,
 				729DB0842BF7CEB100962C4C /* WorkoutView.swift */,
+				72B74E162BF89788002AFDA3 /* WeightEntryView.swift */,
 				729DB0862BF7CECA00962C4C /* NutritionView.swift */,
 				729DB0882BF7CEE200962C4C /* SleepView.swift */,
 				72B125A32AADBA690001523B /* AuthModel.swift */,
@@ -254,6 +274,7 @@
 				72658A612B015A6C004C7707 /* FirebaseDatabaseSwift */,
 				720AAE482BA8A5290024F802 /* FirebaseAnalytics */,
 				720AAE4A2BA8A5290024F802 /* FirebaseAnalyticsSwift */,
+				72B74E1A2BF9EA9C002AFDA3 /* FirebaseStorage */,
 			);
 			productName = WeightX2;
 			productReference = 72EADFFF2A88F77C001998B5 /* FitShareApp.app */;
@@ -378,15 +399,19 @@
 				724F20EB2AE2EC270035F4CA /* PhoneNumberView.swift in Sources */,
 				7216C4C92B75440900BBF4AC /* LogoView.swift in Sources */,
 				726003002AF296F100B12E7C /* FitShareApp.swift in Sources */,
+				72B74E232BFA186B002AFDA3 /* RefreshControl.swift in Sources */,
+				72B74E1F2BFA1543002AFDA3 /* SwipeToDeleteModifier.swift in Sources */,
 				72F31B762AB5FA3600B4249F /* CustomUserDefaults.swift in Sources */,
 				72EAE0052A88F77C001998B5 /* ContentView.swift in Sources */,
 				729DB0812BF7CCB300962C4C /* StepView.swift in Sources */,
 				729DB0912BF7ECB200962C4C /* AdaptiveText.swift in Sources */,
+				72B74E252BFB7A54002AFDA3 /* DraggableCircle.swift in Sources */,
 				72F31B6E2AB4BF9200B4249F /* Utils.swift in Sources */,
 				7278CDDA2AA7A48100263C74 /* OTPView.swift in Sources */,
 				729DB08F2BF7DA6700962C4C /* CustomProgressViewStyle.swift in Sources */,
 				7216C4CB2B77E06B00BBF4AC /* LaunchView.swift in Sources */,
 				72F31B722AB4C16100B4249F /* AuthenticationService.swift in Sources */,
+				72B74E1D2BF9EE41002AFDA3 /* ImagePicker.swift in Sources */,
 				72F31B702AB4C04200B4249F /* CountryModel.swift in Sources */,
 				72658A5E2B015455004C7707 /* GoalSheet.swift in Sources */,
 				72248C002BA4FBDB007BB5D7 /* ScreenshotManager.swift in Sources */,
@@ -400,6 +425,8 @@
 				72658A642B015C23004C7707 /* GoalModel.swift in Sources */,
 				729DB08D2BF7D46000962C4C /* SettingsView.swift in Sources */,
 				729DB08B2BF7CF1B00962C4C /* NutritionSlabView.swift in Sources */,
+				72B74E212BFA1741002AFDA3 /* DraggableModifier.swift in Sources */,
+				72B74E172BF89788002AFDA3 /* WeightEntryView.swift in Sources */,
 				729DB0872BF7CECA00962C4C /* NutritionView.swift in Sources */,
 				729DB0832BF7CCEC00962C4C /* SlabView.swift in Sources */,
 				729DB0892BF7CEE200962C4C /* SleepView.swift in Sources */,
@@ -838,6 +865,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 72B125B22AAEC9860001523B /* XCRemoteSwiftPackageReference "PromiseKit" */;
 			productName = PromiseKit;
+		};
+		72B74E1A2BF9EA9C002AFDA3 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72B125A92AAE47500001523B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

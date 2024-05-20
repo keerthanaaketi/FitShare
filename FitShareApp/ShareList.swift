@@ -11,4 +11,5 @@ class ShareList: ObservableObject{
     @Published var showNutrition: Bool = true
     @Published var showSleep: Bool = true
     @Published var showWorkout: Bool = true
+    @Published var showUserName: Bool = true
 }

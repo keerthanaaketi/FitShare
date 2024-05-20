@@ -16,5 +16,6 @@ class GoalModel: ObservableObject {
     @Published var carbsGoal: String = "0"
     @Published var workoutsGoal: String = "0"
     @Published var sleepGoal: String = "0"
+    @Published var userName: String = ""
     @Published var goalSet = false
 }

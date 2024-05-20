@@ -71,6 +71,7 @@ struct LogoView: View {
                         shareList.showNutrition = showNutrition
                         shareList.showWorkout = showWorkout
                         shareList.showSleep = showSleep
+                        goalModel.userName = userData?["userName"] as! String
                     }
                 }
             }

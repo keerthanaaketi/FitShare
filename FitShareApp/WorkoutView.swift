@@ -4,7 +4,7 @@ import HealthKit
 struct WorkoutView: View {
     var workouts: [HKWorkout]
     var workoutGoal: Int
-
+    @Environment(\.colorScheme) var colorScheme
     @State private var showDetails = false
 
     var totalMinutes: Int {
@@ -14,8 +14,9 @@ struct WorkoutView: View {
     }
 
     var body: some View {
+        let backgroundColor = colorScheme == .dark ? Color.gray.opacity(0.3) : Color.black.opacity(0.1)
         let progress = min(max(Double(totalMinutes) / Double(workoutGoal), 0.0), 1.0)
-
+        let goalReached = totalMinutes >= workoutGoal
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 VStack {
@@ -29,16 +30,30 @@ struct WorkoutView: View {
                 }
                 AdaptiveText(text: "\(totalMinutes) / \(workoutGoal) mins", font: .title2, color: .blue)
                 Spacer()
-                Text("Remaining: \(workoutGoal - totalMinutes) mins")
-                    .foregroundColor(.gray)
-                    .font(.caption)
+                if(goalReached){
+                    Text("Smashed it!")
+                        .foregroundColor(.green)
+                        .font(.caption)
+                        .fontWeight(.bold)
+                
+                } else {
+                    Text("Remaining: \(workoutGoal - totalMinutes) mins")
+                        .foregroundColor(.gray)
+                        .font(.caption)
             }
-            ProgressView(value: progress)
-                .progressViewStyle(CustomProgressViewStyle(color: .green))
-                .onTapGesture {
-                    showDetails.toggle()
+            }
+            
+            HStack {
+                ProgressView(value: progress)
+                    .progressViewStyle(CustomProgressViewStyle(color: .green))
+                Button(action: {
+                        showDetails.toggle()
+                    }) {
+                    Image(systemName: showDetails ? "chevron.up" : "chevron.down")
+                        .foregroundColor(.blue)
+                        .padding(.leading, 5)
                 }
-
+            }
             if showDetails {
                 VStack {
                     ForEach(workouts, id: \.uuid) { workout in
@@ -59,7 +74,7 @@ struct WorkoutView: View {
             }
         }
         .padding()
-        .background(Color.black.opacity(0.1))
+        .background(backgroundColor)
         .cornerRadius(15)
         .padding(.horizontal)
     }
