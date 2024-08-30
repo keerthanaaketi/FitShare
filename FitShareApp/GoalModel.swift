@@ -9,6 +9,7 @@ import Foundation
 
 class GoalModel: ObservableObject {
     @Published var stepGoal: String = "10000"
+    @Published var weightGoal: String = ""
     @Published var actualStep: String = "0"
     @Published var nutritionGoal: String = "0"
     @Published var proteinGoal: String = "0"

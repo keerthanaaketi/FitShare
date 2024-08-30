@@ -1,89 +1,138 @@
 import SwiftUI
 import HealthKit
 
-struct WeightEntryView: View {
+struct WeightView: View {
+    @Binding var isPresentingWeightView: Bool
     @Binding var weight: Double
+    @Binding var selectedDate: Date
+    let healthStore: HKHealthStore
+    @ObservedObject var viewHelper: ViewHelper
     @State private var weightText: String = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
-    let healthStore: HKHealthStore
-    let date: Date
-
     @State private var weeklyAverage: Double = 0.0
     @State private var weeklyAverageDifference: Double = 0.0
-    @State private var showDetails = false
-    @Environment(\.colorScheme) var colorScheme
+    @State private var showWeightEntryPopup = false
 
     var body: some View {
-        let backgroundColor = colorScheme == .dark ? Color.gray.opacity(0.3) : Color.black.opacity(0.1)
-        VStack(alignment: .leading, spacing: 10) {
+        VStack {
+            Text("Weight")
+                .font(.title)
+                .padding()
+
+            // Horizontal Scrollable Date View
             HStack {
-                VStack {
-                    Image(systemName: "gauge")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.blue)
-                    Text("Weight")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-                Spacer()
-                Text("\(Int(validWeeklyAverageDifference * 1000))g this week")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                Spacer()
                 Button(action: {
-                    withAnimation {
-                        showDetails.toggle()
-                    }
+                    let newDate = Calendar.current.date(byAdding: .weekOfYear, value: -1, to: viewHelper.weekDates.first ?? selectedDate) ?? selectedDate
+                    viewHelper.updateWeekDates(for: newDate)
+                    fetchWeight(for: newDate)
+                    calculateWeeklyAverage(for: newDate)
                 }) {
-                    Image(systemName: showDetails ? "chevron.up" : "chevron.down")
-                        .foregroundColor(.blue)
-                        .padding(.leading, 5)
+                    Image(systemName: "chevron.left")
+                        .font(.largeTitle)
+                        .padding()
                 }
-            }
-            if showDetails {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Weekly Average: \(weeklyAverage, specifier: "%.2f") kg")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                    Text("Weekly Average Difference: \(weeklyAverageDifference, specifier: "%.2f") kg")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                    HStack {
-                        TextField("Enter weight(kg)", text: $weightText)
-                            .keyboardType(.decimalPad)
-                            .padding(.vertical, 6)
-                            .background(Color(.systemGray6))
-                            .cornerRadius(10)
-                        Button(action: {
-                            saveWeight()
-                            dismissKeyboard()
-                        }) {
-                            Text("Save")
-                                .foregroundColor(.white)
-                                .padding(.vertical, 6)
-                                .padding(.horizontal)
-                                .background(Color.blue)
-                                .cornerRadius(10)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 5) {
+                        ForEach(viewHelper.weekDates, id: \.self) { date in
+                            VStack {
+                                Text(viewHelper.dateFormatter.string(from: date))
+                                    .font(.caption)
+                                    .foregroundColor(date == selectedDate ? .blue : viewHelper.getContrastColor(for: date))
+                                    .padding(.bottom, 2)
+                                Text(viewHelper.monthFormatter.string(from: date))
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                Spacer()
+                                Text(viewHelper.weightForDate(date) ?? "")
+                                    .font(.caption2)
+                                    .foregroundColor(date == selectedDate ? .blue : viewHelper.getContrastColor(for: date))
+                            }
+                            .padding(.vertical)
+                            .padding(.horizontal, 3)
+                            .background(date == selectedDate ? Color.blue.opacity(0.3) : Color.clear)
+                            .cornerRadius(5)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Color.gray, lineWidth: 1)
+                            )
+                            .onTapGesture {
+                                selectedDate = date
+                                fetchWeight(for: selectedDate)
+                                calculateWeeklyAverage(for: selectedDate)
+                            }
                         }
                     }
                 }
-               // .padding(.horizontal)
+                Button(action: {
+                    let newDate = Calendar.current.date(byAdding: .weekOfYear, value: 1, to: viewHelper.weekDates.first ?? selectedDate) ?? selectedDate
+                    viewHelper.updateWeekDates(for: newDate)
+                    fetchWeight(for: newDate)
+                    calculateWeeklyAverage(for: newDate)
+                }) {
+                    Image(systemName: "chevron.right")
+                        .font(.largeTitle)
+                        .padding()
+                }
+            }
+
+            // Weekly Average and Difference
+            HStack {
+                VStack {
+                    Text("Weekly Avg")
+                        .font(.caption)
+                    Text("\(weeklyAverage, specifier: "%.2f")")
+                        .font(.headline)
+                }
+                VStack {
+                    Text("Weekly Avg Diff")
+                        .font(.caption)
+                    Text("\(weeklyAverageDifference, specifier: "%.2f")")
+                        .font(.headline)
+                }
+            }
+            .padding()
+
+            // Weight Log List
+            List {
+                ForEach(viewHelper.weightHistory) { weightEntry in
+                    HStack {
+                        Text("\(weightEntry.dateString): \(String(format: "%.2f", weightEntry.value))")
+                        Spacer()
+                        Button(action: {
+                            viewHelper.deleteWeightEntry(weight: weightEntry)
+                        }) {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
+            }
+
+            // Add Weight Button
+            Button(action: {
+                showWeightEntryPopup = true
+            }) {
+                Text("Add Weight")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .sheet(isPresented: $showWeightEntryPopup) {
+                WeightEntryPopup(selectedDate: $selectedDate, weight: $weight, onSave: {
+                    saveWeight()
+                    showWeightEntryPopup = false
+                })
             }
         }
-        .padding()
-        .background(backgroundColor)
-        .cornerRadius(15)
-        .padding(.horizontal)
-        .onTapGesture {
-            dismissKeyboard()
-        }
         .onAppear {
-            fetchWeight(for: date)
-            calculateWeeklyAverage(for: date)
+            viewHelper.fetchWeightHistory()
+            viewHelper.updateWeekDates(for: selectedDate)
+            fetchWeight(for: selectedDate)
+            calculateWeeklyAverage(for: selectedDate)
         }
-        .onChange(of: date) { newValue in
+        .onChange(of: selectedDate) { newValue in
             fetchWeight(for: newValue)
             calculateWeeklyAverage(for: newValue)
         }
@@ -92,15 +141,8 @@ struct WeightEntryView: View {
         }
     }
 
-    var validWeeklyAverageDifference: Double {
-        if weeklyAverageDifference.isFinite && !weeklyAverageDifference.isNaN {
-            return weeklyAverageDifference
-        } else {
-            return 0.0
-        }
-    }
-
     func saveWeight() {
+        self.weightText = String(format: "%.2f", self.weight)
         guard let weightValue = Double(weightText) else {
             alertMessage = "Please enter a valid weight."
             showAlert = true
@@ -115,14 +157,14 @@ struct WeightEntryView: View {
             showAlert = true
             return
         }
-        
+
         let weightQuantity = HKQuantity(unit: HKUnit.gramUnit(with: .kilo), doubleValue: weight)
-        let startOfDay = Calendar.current.startOfDay(for: date)
+        let startOfDay = Calendar.current.startOfDay(for: selectedDate)
         let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!
         let weightSample = HKQuantitySample(type: weightType, quantity: weightQuantity, start: startOfDay, end: startOfDay)
-        
+
         let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: endOfDay, options: .strictStartDate)
-        
+
         let query = HKSampleQuery(sampleType: weightType, predicate: predicate, limit: 1, sortDescriptors: nil) { query, results, error in
             guard error == nil else {
                 DispatchQueue.main.async {
@@ -131,9 +173,8 @@ struct WeightEntryView: View {
                 }
                 return
             }
-            
+
             if let existingSample = results?.first as? HKQuantitySample {
-                // Delete the existing sample before saving the new one
                 self.healthStore.delete(existingSample) { success, error in
                     if success {
                         self.saveNewWeightSample(weightSample)
@@ -148,7 +189,6 @@ struct WeightEntryView: View {
                 self.saveNewWeightSample(weightSample)
             }
         }
-        
         healthStore.execute(query)
     }
 
@@ -159,7 +199,7 @@ struct WeightEntryView: View {
                     print("Weight saved successfully.")
                     self.alertMessage = "Weight saved successfully."
                     self.weight = weightSample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-                    self.calculateWeeklyAverage(for: self.date)
+                    self.calculateWeeklyAverage(for: self.selectedDate)
                 } else {
                     self.alertMessage = "Failed to save weight: \(error?.localizedDescription ?? "Unknown error")"
                 }
@@ -190,7 +230,7 @@ struct WeightEntryView: View {
             if let result = results?.first as? HKQuantitySample {
                 DispatchQueue.main.async {
                     self.weight = result.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-                    self.weightText = String(format: "%.1f", self.weight)
+                    self.weightText = String(format: "%.2f", self.weight)
                 }
             } else {
                 DispatchQueue.main.async {
@@ -282,14 +322,28 @@ struct WeightEntryView: View {
     }
 }
 
-struct WeightEntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeightEntryView(weight: .constant(70.0), healthStore: HKHealthStore(), date: Date())
+extension DateFormatter {
+    static var shortDate: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
     }
 }
 
-extension View {
-    func dismissKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+struct WeightEntry: Identifiable, Hashable {
+    var id: UUID
+    var date: Date
+    var value: Double
+
+    var dateString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        return formatter.string(from: date)
+    }
+}
+
+struct weightView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeScreenView(phoneViewModel: PhoneViewModel(), goalModel: GoalModel(), shareList: ShareList())
     }
 }

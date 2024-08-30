@@ -18,6 +18,7 @@ public struct GoalSheet: View {
     @State private var phoneNumber: String = ""
     @State private var userNameLocal: String = ""
     @State var stepGoalLocal: String = ""
+    @State var weightGoalLocal: String = ""
     @State var nutritionGoalLocal: String = ""
     @State var proteinGoalLocal: String = ""
     @State var fatGoalLocal: String = ""
@@ -37,6 +38,7 @@ public struct GoalSheet: View {
                 if isDataFetched {
                     List {
                         HStackRow(title: "Name", textValue: $goalModel.userName, toggleValue: $shareList.showUserName, textField: "Name")
+                        HStackRow(title: "Weight", textValue: $goalModel.weightGoal, toggleValue: $shareList.showWeight, textField: "Weight")
                         HStackRow(title: "Steps", textValue: $goalModel.stepGoal, toggleValue: $shareList.showSteps, textField: "steps")
                         HStackRow(title: "Nutrition", textValue: $goalModel.nutritionGoal, toggleValue: $shareList.showNutrition, textField: "Calories")
                         HStackRow2(title: "Protein", textValue: $goalModel.proteinGoal, textField: "gms")
@@ -48,6 +50,9 @@ public struct GoalSheet: View {
                     Button("Set Goal") {
                         if(!self.userNameLocal.isEmpty){
                             goalModel.userName = self.userNameLocal
+                        }
+                        if(!self.weightGoalLocal.isEmpty){
+                            goalModel.weightGoal = self.weightGoalLocal
                         }
                         if(!self.stepGoalLocal.isEmpty){
                             goalModel.stepGoal = self.stepGoalLocal
@@ -77,9 +82,10 @@ public struct GoalSheet: View {
                                let fatCount = Int(goalModel.fatsGoal),
                                let carbsCount = Int(goalModel.carbsGoal),
                                let workoutCount = Int(goalModel.workoutsGoal),
+                               let weightGoal = Int(goalModel.weightGoal),
                                let sleepCount = Int(goalModel.sleepGoal)
                             {
-                                createUserNode(userID: userID, userName: goalModel.userName, goalStepCount: goalStepCount, goalNutrition: nutritionCount, goalProtein: proteinCount, goalFat: fatCount, goalCarbs: carbsCount, goalWorkouts: workoutCount, goalSleep: sleepCount)
+                                createUserNode(userID: userID, userName: goalModel.userName,goalWeight: weightGoal, goalStepCount: goalStepCount, goalNutrition: nutritionCount, goalProtein: proteinCount, goalFat: fatCount, goalCarbs: carbsCount, goalWorkouts: workoutCount, goalSleep: sleepCount)
                             } else {
                                 print("Invalid goal step count input")
                             }
@@ -129,6 +135,9 @@ public struct GoalSheet: View {
                 if let userData = snapshot.value as? [String: Any] {
                     if let userName = userData["userName"] as? String {
                         goalModel.userName = userName
+                    }
+                    if let goalWeight = userData["goalWeight"] as? Int {
+                        goalModel.weightGoal = "\(goalWeight)"
                     }
                     if let goalStepCount = userData["goalStepCount"] as? Int {
                         goalModel.stepGoal = "\(goalStepCount)"
@@ -224,11 +233,12 @@ public struct GoalSheet: View {
         return nil
     }
     
-    func createUserNode(userID: String, userName: String, goalStepCount: Int, goalNutrition: Int, goalProtein: Int, goalFat: Int, goalCarbs: Int, goalWorkouts: Int, goalSleep: Int) {
+    func createUserNode(userID: String, userName: String,goalWeight: Int, goalStepCount: Int, goalNutrition: Int, goalProtein: Int, goalFat: Int, goalCarbs: Int, goalWorkouts: Int, goalSleep: Int) {
         let ref = Database.database().reference().child("users").child(userID)
 
         let userData: [String: Any] = [
             "userName": userName,
+            "goalWeight":goalWeight,
             "goalStepCount": goalStepCount,
             "goalNutrition": goalNutrition,
             "goalProtein": goalProtein,

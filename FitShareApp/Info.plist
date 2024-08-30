@@ -13,13 +13,13 @@
 			</array>
 		</dict>
 	</array>
+	<key>Firebase/URL</key>
+	<string>https://fitshare-37f81-default-rtdb.firebaseio.com/</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
 	</array>
-	<key>Firebase/URL</key>
-	<string>https://fitshare-37f81-default-rtdb.firebaseio.com/</string>
 </dict>
 </plist>

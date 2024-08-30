@@ -2,69 +2,92 @@
 //  DraggableCircle.swift
 //  FitShareApp
 //
-//  Created by Keerthanaa Vm on 20/05/24.
+//  Created by Keerthanaa Vm on 21/05/24.
 //
 
 import Foundation
 import SwiftUI
 
-struct DraggableCircle: View {
-    let title: String
-    let progress: Double
-    let goal: Double
-    let onDelete: () -> Void
-    @State private var isDragging = false
-    @State private var offset: CGSize = .zero
-
+/*struct DraggableCircle: View {
+    @Binding var value: Double
+    var goal: Double?
+    var title: String
+    var unit: String
+    var color: Color
+    @Binding var position: CGPoint
+    var boundary: CGRect
+    @Binding var showDeleteIcon: Bool
+    var onDelete: () -> Void
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        ZStack {
-            Circle()
-                .trim(from: 0, to: CGFloat(min(progress / goal, 1.0)))
-                .stroke(AngularGradient(gradient: Gradient(colors: [.blue, .green]), center: .center), style: StrokeStyle(lineWidth: 10, lineCap: .round))
-                .rotationEffect(Angle(degrees: 270))
-                .frame(width: 100, height: 100)
-
-            VStack {
-                Text(title)
-                    .font(.caption)
-                Text("\(Int(progress))/\(Int(goal))")
-                    .font(.caption)
-                    .bold()
-            }
-            
-            if isDragging {
-                Button(action: {
-                    onDelete()
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.red)
-                        .padding(8)
-                        .background(Color.white)
-                        .clipShape(Circle())
-                        .shadow(radius: 2)
+        VStack {
+            ZStack {
+                Circle()
+                    .fill(color.opacity(0.5))
+                    .frame(width: 120, height: 120)
+                    .shadow(color: color.opacity(0.5), radius: 10, x: 5, y: 5)
+                Circle()
+                    .trim(from: 0.0, to: CGFloat(min(value / (goal ?? value), 1.0)))
+                    .stroke(color, style: StrokeStyle(lineWidth: 15, lineCap: .round))
+                    .frame(width: 100, height: 100)
+                    .rotationEffect(Angle(degrees: -90))
+                VStack {
+                    Text(title)
+                        .font(.caption).bold()
+                        .foregroundColor(contrastColor(for: color))
+                    if let goal = goal {
+                        Text("\(Int(value))")
+                            .font(.title).bold()
+                            .foregroundColor(contrastColor(for: color))
+                        Text("/\(Int(goal)) \(unit)")
+                            .font(.caption).bold()
+                            .foregroundColor(contrastColor(for: color))
+                    } else {
+                        Text("\(Int(value)) \(unit)")
+                            .font(.caption).bold()
+                            .foregroundColor(contrastColor(for: color))
+                    }
                 }
-                .offset(x: 35, y: -35)
+                if showDeleteIcon {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                onDelete()
+                            }) {
+                                Image(systemName: "minus.circle.fill")
+                                    .foregroundColor(.red)
+                            }
+                        }
+                    }
+                    .offset(x: -150, y: -50) // Adjusted offset to position the delete button correctly
+                }
+            }
+            .position(position)
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        let newLocation = value.location
+                        if boundary.contains(newLocation) {
+                            self.position = newLocation
+                        }
+                    }
+                    .onEnded { _ in
+                        showDeleteIcon = false
+                    }
+            )
+            .onLongPressGesture {
+                withAnimation {
+                    showDeleteIcon.toggle()
+                }
             }
         }
-        .offset(offset)
-        .gesture(
-            DragGesture()
-                .onChanged { value in
-                    self.offset = value.translation
-                    self.isDragging = true
-                }
-                .onEnded { _ in
-                    self.isDragging = false
-                }
-        )
-        .onLongPressGesture {
-            self.isDragging.toggle()
-        }
     }
-}
-
-struct DraggableCircle_Previews: PreviewProvider {
-    static var previews: some View {
-        DraggableCircle(title: "Steps", progress: 5000, goal: 10000, onDelete: {})
+    
+    func contrastColor(for color: Color) -> Color {
+        let components = color.cgColor?.components ?? [0.0, 0.0, 0.0]
+        let brightness = (components[0] * 299 + components[1] * 587 + components[2] * 114) / 1000
+        return brightness < 0.5 ? .white : .black
     }
-}
+}*/
