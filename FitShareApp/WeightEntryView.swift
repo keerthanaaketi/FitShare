@@ -28,7 +28,7 @@ struct WeightEntryView: View {
                         .foregroundColor(.gray)
                 }
                 Spacer()
-                Text("\(Int(validWeeklyAverageDifference * 1000))g this week")
+                Text("\(formattedWeeklyAverageDifference) this week")
                     .font(.headline)
                     .foregroundColor(.blue)
                 Spacer()
@@ -47,11 +47,11 @@ struct WeightEntryView: View {
                     Text("Weekly Average: \(weeklyAverage, specifier: "%.2f") kg")
                         .font(.caption)
                         .foregroundColor(.gray)
-                    Text("Weekly Average Difference: \(weeklyAverageDifference, specifier: "%.2f") kg")
+                    Text("Weekly Average Difference: \(formattedWeeklyAverageDifference)")
                         .font(.caption)
                         .foregroundColor(.gray)
                     HStack {
-                        TextField("Enter weight(kg)", text: $weightText)
+                        TextField("Enter weight (kg)", text: $weightText)
                             .keyboardType(.decimalPad)
                             .padding(.vertical, 6)
                             .background(Color(.systemGray6))
@@ -69,7 +69,6 @@ struct WeightEntryView: View {
                         }
                     }
                 }
-               // .padding(.horizontal)
             }
         }
         .padding()
@@ -97,6 +96,16 @@ struct WeightEntryView: View {
             return weeklyAverageDifference
         } else {
             return 0.0
+        }
+    }
+
+    var formattedWeeklyAverageDifference: String {
+        if validWeeklyAverageDifference > 0 {
+            return String(format: "+%.2f kg", validWeeklyAverageDifference)
+        } else if validWeeklyAverageDifference < 0 {
+            return String(format: "%.2f kg", validWeeklyAverageDifference)
+        } else {
+            return "0.00 kg"
         }
     }
 
@@ -159,6 +168,7 @@ struct WeightEntryView: View {
                     print("Weight saved successfully.")
                     self.alertMessage = "Weight saved successfully."
                     self.weight = weightSample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
+                    self.weightText = String(format: "%.2f", self.weight) // Ensure weight shows with 2 decimals
                     self.calculateWeeklyAverage(for: self.date)
                 } else {
                     self.alertMessage = "Failed to save weight: \(error?.localizedDescription ?? "Unknown error")"
@@ -190,7 +200,7 @@ struct WeightEntryView: View {
             if let result = results?.first as? HKQuantitySample {
                 DispatchQueue.main.async {
                     self.weight = result.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-                    self.weightText = String(format: "%.1f", self.weight)
+                    self.weightText = String(format: "%.2f", self.weight) // Display 2 decimal places
                 }
             } else {
                 DispatchQueue.main.async {

@@ -48,6 +48,7 @@ public struct HomeScreenView: View {
     @State private var totalAsleepDuration: Double = 0.0
     @State private var selectedDate = Date()
     @State private var showDatePicker = false
+    @State private var showBottomBar = true // State variable to control bottom bar visibility
 
     @State private var isWeightDeleted = false
     @State private var isStepsDeleted = false
@@ -63,7 +64,6 @@ public struct HomeScreenView: View {
     @State private var isRefreshing = false
 
     public var body: some View {
-        let imageName = isDarkTheme ? "FitShareDark" : "FitShareLaunch"
         ZStack {
             VStack {
                 // Header
@@ -88,16 +88,22 @@ public struct HomeScreenView: View {
                     Button(action: {
                         showDatePicker.toggle()
                     }) {
-                            Text(selectedDate, style: .date)
-                                .foregroundColor(.blue)
-                                .font(.title3)
-                                .padding(.horizontal)
-                                .padding(.vertical, 8)
-                                .background(Color(.systemGray6))
-                                .cornerRadius(10)
+                        Text(selectedDate, style: .date)
+                            .foregroundColor(.blue)
+                            .font(.title3)
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(10)
                     }
                     .sheet(isPresented: $showDatePicker) {
+                        // Today Button - Set the selected date to today
+                        Button("Today") {
+                            selectedDate = Date() // Update the selected date to today
+                        }
+                        .padding(.top)
                         VStack {
+                            // DatePicker to select a date
                             DatePicker(
                                 "Select Date",
                                 selection: $selectedDate,
@@ -106,6 +112,7 @@ public struct HomeScreenView: View {
                             )
                             .datePickerStyle(GraphicalDatePickerStyle())
                             .frame(maxHeight: 400)
+                            // Submit Button - Close the sheet and refresh data
                             Button("Submit") {
                                 showDatePicker = false
                                 refreshData(for: selectedDate)
@@ -145,13 +152,7 @@ public struct HomeScreenView: View {
                 .padding(.horizontal)
                 .padding(.bottom)
                 .padding(.top)
-                HStack{
-                    if shareList.showUserName, !goalModel.userName.isEmpty {
-                        Text("\(goalModel.userName)'s day")
-                            .foregroundColor(.white)
-                            .font(.caption)
-                    }
-                }
+
                 // Scrollable Content with Pull-to-Refresh
                 RefreshableScrollView(isRefreshing: $isRefreshing, action: {
                     refreshData(for: selectedDate)
@@ -211,9 +212,13 @@ public struct HomeScreenView: View {
                                 .swipeToDelete(isDeleted: $isSleepDeleted)
                         }
                     }
+                    .padding(.bottom, showBottomBar ? 60 : 0) // Adjust bottom padding for the bottom bar
                 }
+                
+                Spacer() // This pushes the bottom bar to the bottom
             }
             .onAppear {
+                requestAuthorization()
                 isDarkTheme = (colorScheme == .dark)
                 if let userID = getUserID() {
                     getUserData(userID: userID) { userData in
@@ -228,7 +233,7 @@ public struct HomeScreenView: View {
                            let showWorkout = userData?["showWorkout"] as? Bool,
                            let showNutrition = userData?["showNutrition"] as? Bool,
                            let showSleep = userData?["showSleep"] as? Bool,
-                            let showUserName = userData?["showUserName"] as? Bool{
+                           let showUserName = userData?["showUserName"] as? Bool {
                             goalModel.stepGoal = String(goalStepCount)
                             goalModel.nutritionGoal = String(goalNutritionCount)
                             goalModel.proteinGoal = String(goalProtein)
@@ -245,58 +250,58 @@ public struct HomeScreenView: View {
                         }
                     }
                 }
-                requestAuthorization()
                 refreshData(for: selectedDate)
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView(phoneViewModel: phoneViewModel, goalModel: goalModel, shareList: shareList)
             }
 
-            // Share button
-            VStack {
-                Spacer()
-                HStack {
+            // Fixed Bottom Bar
+            if showBottomBar {
+                VStack {
                     Spacer()
-                    Button(action: {
-                        Analytics.logEvent("screenshot_capture_initiated", parameters: [
-                            "description": "User initiated screenshot capture" as NSObject
-                        ])
-                        ScreenshotManager.shared.capture { capturedImage in
-                            DispatchQueue.main.async {
-                                self.screenshot = capturedImage
-                                if capturedImage != nil {
-                                    self.readyToPresentActivityView = true
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            showBottomBar = false // Hide the bottom bar before taking the screenshot
+                            Analytics.logEvent("screenshot_capture_initiated", parameters: [
+                                "description": "User initiated screenshot capture" as NSObject
+                            ])
+                            ScreenshotManager.shared.capture { capturedImage in
+                                DispatchQueue.main.async {
+                                    self.screenshot = capturedImage
+                                    self.showBottomBar = true // Show the bottom bar after the screenshot is taken
+                                    if capturedImage != nil {
+                                        self.readyToPresentActivityView = true
+                                    }
+                                }
+                            }
+                        }) {
+                            Image(systemName: "square.and.arrow.up") // Standard share icon
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding()
+                        }
+                        .onChange(of: readyToPresentActivityView) { newValue in
+                            if newValue {
+                                DispatchQueue.main.async {
+                                    self.isPresentingActivityViewController = true
+                                    self.readyToPresentActivityView = false
                                 }
                             }
                         }
-                    }) {
-                        Image(imageName)
-                            .resizable()
-                            .frame(width: 70, height: 70)
-                            .clipShape(Circle())
-                            .shadow(color: colorScheme == .dark ? .gray : .black, radius: 10)
-                           // .overlay(
-                             //   Circle()
-                               //     .stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: 2)
-                            //)
-                    }
-                    .padding()
-                    .onChange(of: readyToPresentActivityView) { newValue in
-                        if newValue {
-                            DispatchQueue.main.async {
-                                self.isPresentingActivityViewController = true
-                                self.readyToPresentActivityView = false
+                        .sheet(isPresented: self.$isPresentingActivityViewController) {
+                            if let screenshotImage = self.screenshot {
+                                ActivityViewController(activityItems: [screenshotImage], onDismiss: {
+                                    self.isPresentingActivityViewController = false
+                                    self.screenshot = nil
+                                })
                             }
                         }
+                        Spacer()
                     }
-                    .sheet(isPresented: self.$isPresentingActivityViewController) {
-                        if let screenshotImage = self.screenshot {
-                            ActivityViewController(activityItems: [screenshotImage], onDismiss: {
-                                self.isPresentingActivityViewController = false
-                                self.screenshot = nil
-                            })
-                        }
-                    }
+                    .background(Color(.systemGray6))
+                    .frame(height: 60) // Height for the bottom bar
                 }
             }
         }

@@ -12,15 +12,23 @@ struct WorkoutView: View {
             return total + Int(workout.duration / 60)
         }
     }
+    
+    // Calculate total kcal burned for all workouts
+    var totalCaloriesBurned: Double {
+        workouts.reduce(0) { total, workout in
+            return total + (workout.totalEnergyBurned?.doubleValue(for: .kilocalorie()) ?? 0)
+        }
+    }
 
     var body: some View {
         let backgroundColor = colorScheme == .dark ? Color.gray.opacity(0.3) : Color.black.opacity(0.1)
         let progress = min(max(Double(totalMinutes) / Double(workoutGoal), 0.0), 1.0)
         let goalReached = totalMinutes >= workoutGoal
+        
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 VStack {
-                    Image(systemName: "flame.fill")
+                    Image(systemName: "flame.fill") // Flame symbol removed
                         .resizable()
                         .frame(width: 30, height: 30)
                         .foregroundColor(.blue)
@@ -28,7 +36,7 @@ struct WorkoutView: View {
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
-                AdaptiveText(text: "\(totalMinutes) / \(workoutGoal) mins", font: .title2, color: .blue)
+                AdaptiveText(text: "\(totalMinutes) / \(workoutGoal) mins  | \(String(format: "%.2f", totalCaloriesBurned)) kcals", font: .title2, color: .blue)
                 Spacer()
                 if(goalReached){
                     Text("Smashed it!")
@@ -40,20 +48,21 @@ struct WorkoutView: View {
                     Text("Remaining: \(workoutGoal - totalMinutes) mins")
                         .foregroundColor(.gray)
                         .font(.caption)
-            }
+                }
             }
             
             HStack {
                 ProgressView(value: progress)
                     .progressViewStyle(CustomProgressViewStyle(color: .green))
                 Button(action: {
-                        showDetails.toggle()
-                    }) {
+                    showDetails.toggle()
+                }) {
                     Image(systemName: showDetails ? "chevron.up" : "chevron.down")
                         .foregroundColor(.blue)
                         .padding(.leading, 5)
                 }
             }
+            
             if showDetails {
                 VStack {
                     ForEach(workouts, id: \.uuid) { workout in
@@ -61,16 +70,18 @@ struct WorkoutView: View {
                             Text(readableWorkoutActivityType(workout.workoutActivityType))
                                 .font(.caption)
                             Spacer()
-                            Text("\(Int(workout.duration / 60)) min")
+                            // Show workout duration and kcal burned with pipe symbol
+                            let duration = Int(workout.duration / 60)
+                            let calories = workout.totalEnergyBurned?.doubleValue(for: .kilocalorie()) ?? 0
+                            Text("\(duration) mins | \(String(format: "%.2f", calories)) kcals")
                                 .font(.caption)
+                                .foregroundColor(.gray)
                         }
-                        .padding()
+                        .padding(.vertical, 5)
                     }
                 }
                 .frame(maxWidth: .infinity)
-                //.padding()
                 .background(Color.gray.opacity(0.1))
-                //.cornerRadius(10)
             }
         }
         .padding()
@@ -79,6 +90,7 @@ struct WorkoutView: View {
         .padding(.horizontal)
     }
 
+    // Converts HKWorkoutActivityType into a readable string
     func readableWorkoutActivityType(_ activityType: HKWorkoutActivityType) -> String {
         switch activityType {
         case .americanFootball: return "American Football"

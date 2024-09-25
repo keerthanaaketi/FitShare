@@ -36,7 +36,7 @@ public struct GoalSheet: View {
             VStack {
                 if isDataFetched {
                     List {
-                        HStackRow(title: "Name", textValue: $goalModel.userName, toggleValue: $shareList.showUserName, textField: "Name")
+            
                         HStackRow(title: "Steps", textValue: $goalModel.stepGoal, toggleValue: $shareList.showSteps, textField: "steps")
                         HStackRow(title: "Nutrition", textValue: $goalModel.nutritionGoal, toggleValue: $shareList.showNutrition, textField: "Calories")
                         HStackRow2(title: "Protein", textValue: $goalModel.proteinGoal, textField: "gms")
